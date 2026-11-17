@@ -421,16 +421,6 @@ button {
 	text-transform: uppercase;
 }
 
-.blink-dot {
-	display: inline-block;
-	width: 7px;
-	height: 7px;
-	border-radius: 50%;
-	background: var(--red);
-	box-shadow: 0 0 8px rgb(var(--red-rgb) / 0.8);
-	animation: caretBlink 1.6s ease-in-out infinite;
-}
-
 .header {
 	position: sticky;
 	top: 0;
@@ -1655,15 +1645,6 @@ main {
 	@media (min-width: 640px) {
 		display: block;
 	}
-}
-
-.contact-status {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	font-size: 13px;
-	color: var(--muted);
-	margin-bottom: 48px;
 }
 
 .contact-closing {
