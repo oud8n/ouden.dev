@@ -63,14 +63,6 @@ export function Contact({ onScrollTo }: ContactProps) {
 					</div>
 
 					<div
-						className='contact-status reveal'
-						style={{ ['--r-delay']: '0.45s' } as CSSProperties}
-					>
-						<span className='blink-dot' />
-						open to work — respond within 24h
-					</div>
-
-					<div
 						className='contact-closing reveal'
 						style={{ ['--r-delay']: '0.55s' } as CSSProperties}
 					>
