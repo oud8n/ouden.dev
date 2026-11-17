@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import { EXPERIENCE_ITEMS } from '../data/content'
 
 export function Experience() {
@@ -8,38 +7,23 @@ export function Experience() {
 				<div className='section-content'>
 					<h2 className='section-title'>Learning by shipping.</h2>
 
-					<div className='terminal-window experience-log reveal'>
-						<div className='terminal-titlebar'>
-							<span className='terminal-dot terminal-dot-red' />
-							<span className='terminal-dot terminal-dot-yellow' />
-							<span className='terminal-dot terminal-dot-green' />
-							<span className='terminal-titlebar-name'>timeline.log</span>
-						</div>
-
-						<div className='experience-log-content'>
-							{EXPERIENCE_ITEMS.map((item, i) => (
-								<div
-									key={item.title}
-									className='log-entry reveal'
-									style={{ ['--r-delay']: `${i * 0.1}s` } as CSSProperties}
-								>
-									<div className='log-entry-head'>
-										<span className='log-year'>[{item.year}]</span>
-										<span className='log-title'>{item.title}</span>
-										{item.tags.length > 0 && (
-											<span className='log-tags'>
-												{item.tags.map(tag => (
-													<span key={tag} className='log-tag'>
-														{tag}
-													</span>
-												))}
+					<div className='timeline'>
+						{EXPERIENCE_ITEMS.map(item => (
+							<div key={item.title} className='timeline-item'>
+								<span className='timeline-year'>{item.year}</span>
+								<div className='timeline-body'>
+									<div className='timeline-head'>
+										<h3 className='timeline-title'>{item.title}</h3>
+										{item.tags.map(tag => (
+											<span key={tag} className='chip'>
+												{tag}
 											</span>
-										)}
+										))}
 									</div>
-									<p className='log-desc'>{item.desc}</p>
+									<p className='timeline-desc'>{item.desc}</p>
 								</div>
-							))}
-						</div>
+							</div>
+						))}
 					</div>
 				</div>
 			</div>

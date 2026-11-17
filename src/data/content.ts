@@ -87,18 +87,35 @@ export const EXPERIENCE_ITEMS = [
 	},
 ]
 
-export const PROJECTS = [
+export type Project = {
+	name: string
+	desc: string
+	tags: string[]
+	url?: string
+	image?: string
+	status?: string
+}
+
+export const PROJECTS: Project[] = [
 	{
-		name: 'skipy.dev',
-		url: 'https://github.com/skipydev/skipy.dev',
-		desc: "This site. The terminal windows, the marquee and the ASCII donut are hand-written, no UI libraries. Open source, take whatever's useful.",
-		tags: ['React', 'TypeScript', 'Vite'],
+		name: 'Физика.AI',
+		status: 'in development',
+		image: 'projects/physics-ai.webp',
+		desc: 'AI platform for the physics EGE. A neural network generates a fresh problem for each of the 26 exam tasks, answers are checked right away, and the stats show which topics are lagging. Next.js frontend, Go backend with DeepSeek.',
+		tags: ['Next.js', 'TypeScript', 'Go', 'DeepSeek'],
 	},
 	{
 		name: 'chronly',
 		url: 'https://github.com/skipy-force/chronly',
+		image: 'projects/chronly.webp',
 		desc: 'Desktop time tracker for Hyprland. Watches the active window in the background and sorts the time into projects on its own: a Today dashboard, a timeline, estimate vs. actual per task. Everything stays local in SQLite.',
 		tags: ['Go', 'Wails', 'React', 'SQLite'],
+	},
+	{
+		name: 'skipy.dev',
+		url: 'https://github.com/skipydev/skipy.dev',
+		desc: "This site. The marquee, the ASCII banner and the donut are hand-written, no UI libraries. Open source, take whatever's useful.",
+		tags: ['React', 'TypeScript', 'Vite'],
 	},
 ]
 
