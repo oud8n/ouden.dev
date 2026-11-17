@@ -9,14 +9,12 @@ export function Projects() {
 				<div className='section-content'>
 					<div className='section-label'>$ ls ~/projects</div>
 					<h2 className='section-title'>
-						Learning projects, <span className='highlight'>not demo apps.</span>
+						Things I've <span className='highlight'>built.</span>
 					</h2>
 					<p className='section-description'>
-						My GitHub is mostly learning repos and projects I built to
-						understand something better. Not polished portfolio pieces.
-						That's fine — this is where you actually learn, making mistakes
-						and iterating. Better than fake apps that look good but teach you
-						nothing.
+						Most of my GitHub is learning repos: small projects I wrote to
+						figure out how something works. These two are the ones worth
+						opening.
 					</p>
 
 					<div className='terminal-window projects-window reveal'>
@@ -60,7 +58,7 @@ export function Projects() {
 								rel='noopener noreferrer'
 								className='project-row-all'
 							>
-								<span>rest on GitHub — 13+ repos</span>
+								<span>more on GitHub</span>
 								<ArrowIcon />
 							</a>
 						</div>

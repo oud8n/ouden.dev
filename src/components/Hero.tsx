@@ -47,11 +47,12 @@ export function Hero({ bannerRef, asciiCanvasRef, onScrollTo }: HeroProps) {
 							</div>
 
 							<p className='hero-subtitle'>
-								I build web applications. Mostly backend, some frontend. I'm
-								19. backend intern working mostly with Go, TypeScript, and NestJS. Day to day, I deal with PostgreSQL, Docker, and APIs, and I actually enjoy figuring out how systems work under the hood.
-								I just like writing clean code and building stuff that actually works
-								P.s 
-								sometimes it's not
+								19, backend intern. I write Go, TypeScript and NestJS; day to
+								day it's PostgreSQL, Docker and APIs, with some React when a
+								project needs a frontend. I like digging into how systems work
+								under the hood and writing code that works.
+								<br />
+								p.s. sometimes it doesn't.
 							</p>
 
 							<div className='hero-buttons'>
