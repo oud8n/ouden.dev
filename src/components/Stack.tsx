@@ -28,7 +28,7 @@ function ToolChip({ tool, showDot }: { tool: Tool; showDot: boolean }) {
 export function Stack() {
 	return (
 		<section id='stack' className='section'>
-			<div className='reveal'>
+			<div>
 				<div className='section-content'>
 					<h2 className='section-title'>
 						the <span className='highlight'>working</span> stack.
@@ -54,8 +54,7 @@ export function Stack() {
 							return (
 								<div
 									key={chapter.title}
-									className='chapter reveal'
-									style={{ ['--r-delay']: `${idx * 0.1}s` } as CSSProperties}
+									className='chapter'
 								>
 									<div className='chapter-head'>
 										<span className='chapter-num'>

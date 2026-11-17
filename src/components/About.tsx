@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import { AsciiDonut } from './AsciiDonut'
 import { ABOUT_PRINCIPLES } from '../data/content'
 
@@ -12,7 +11,7 @@ const WHOAMI_ROWS = [
 export function About() {
 	return (
 		<section id='about' className='section'>
-			<div className='reveal'>
+			<div>
 				<div className='section-content'>
 					<h2 className='section-title'>
 						Mostly <span className='highlight'>backend.</span>
@@ -20,8 +19,7 @@ export function About() {
 
 					<div className='about-grid'>
 						<div
-							className='about-lead reveal'
-							style={{ ['--r-delay']: '0.1s' } as CSSProperties}
+							className='about-lead'
 						>
 							<p className='about-quote'>
 								"Code you understand beats code that looks clever."
@@ -38,8 +36,7 @@ export function About() {
 						</div>
 
 						<div
-							className='whoami-card terminal-window reveal'
-							style={{ ['--r-delay']: '0.15s' } as CSSProperties}
+							className='whoami-card terminal-window'
 						>
 							<div className='terminal-titlebar'>
 								<span className='terminal-dot terminal-dot-red' />

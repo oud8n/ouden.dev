@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import { CONTACTS } from '../data/content'
 import { ArrowIcon } from './icons'
 
@@ -9,7 +8,7 @@ type ContactProps = {
 export function Contact({ onScrollTo }: ContactProps) {
 	return (
 		<section id='contact' className='section contact-section'>
-			<div className='reveal'>
+			<div>
 				<div className='section-content'>
 					<h2 className='section-title contact-title'>Get in touch.</h2>
 					<p className='section-description'>
@@ -36,8 +35,7 @@ export function Contact({ onScrollTo }: ContactProps) {
 										? undefined
 										: 'noopener noreferrer'
 								}
-								className='reveal contact-row'
-								style={{ ['--r-delay']: `${i * 0.08}s` } as CSSProperties}
+								className='contact-row'
 							>
 								<span className='contact-row-index'>
 									{String(i + 1).padStart(2, '0')}
@@ -62,8 +60,7 @@ export function Contact({ onScrollTo }: ContactProps) {
 					</div>
 
 					<div
-						className='contact-closing reveal'
-						style={{ ['--r-delay']: '0.55s' } as CSSProperties}
+						className='contact-closing'
 					>
 						<a
 							href='#hero-top'

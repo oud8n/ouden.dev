@@ -1,20 +1,47 @@
 import { useEffect } from 'react'
 
+const TARGETS = [
+	'.section-title',
+	'.section-description',
+	'.about-quote',
+	'.section-text',
+	'.whoami-card',
+	'.chapter',
+	'.timeline-item',
+	'.project',
+	'.project-all',
+	'.contact-row',
+	'.contact-closing',
+].join(',')
+
+const STAGGER = 0.08
+const MAX_STEPS = 6
+
 export function useRevealAll() {
 	useEffect(() => {
-		const revealEls = document.querySelectorAll('.reveal')
+		document
+			.querySelectorAll<HTMLElement>(TARGETS)
+			.forEach(el => el.classList.add('reveal'))
+
+		const revealEls = document.querySelectorAll<HTMLElement>('.reveal')
 		if (!revealEls.length) return
 
 		const observer = new IntersectionObserver(
 			entries => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting) {
-						entry.target.classList.add('is-visible')
-						observer.unobserve(entry.target)
-					}
-				})
+				entries
+					.filter(entry => entry.isIntersecting)
+					.sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top)
+					.forEach((entry, i) => {
+						const el = entry.target as HTMLElement
+						el.style.setProperty(
+							'--r-delay',
+							`${Math.min(i, MAX_STEPS) * STAGGER}s`,
+						)
+						el.classList.add('is-visible')
+						observer.unobserve(el)
+					})
 			},
-			{ threshold: 0.15, rootMargin: '0px 0px -60px 0px' },
+			{ threshold: 0.12, rootMargin: '0px 0px -40px 0px' },
 		)
 
 		revealEls.forEach(el => observer.observe(el))
