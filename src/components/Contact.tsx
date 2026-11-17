@@ -14,8 +14,8 @@ export function Contact({ onScrollTo }: ContactProps) {
 					<div className='section-label'>$ contact --open</div>
 					<h2 className='section-title contact-title'>Get in touch.</h2>
 					<p className='section-description'>
-						Looking for internships, projects, or just talking about code. Use
-						whatever works for you.
+						Open to internships and project work, or just a chat about code.
+						Telegram is the fastest way to reach me.
 					</p>
 
 					<div className='contact-table'>
@@ -74,9 +74,6 @@ export function Contact({ onScrollTo }: ContactProps) {
 						className='contact-closing reveal'
 						style={{ ['--r-delay']: '0.55s' } as CSSProperties}
 					>
-						<p className='contact-closing-text'>
-							I actually respond. No ghosting, no auto-reply nonsense.
-						</p>
 						<a
 							href='#hero-top'
 							onClick={e => {

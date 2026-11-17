@@ -16,7 +16,7 @@ export const NAV_ITEMS = [
 export const STACK_CHAPTERS = [
 	{
 		title: 'languages',
-		desc: 'Sharpened, low-level, daily.',
+		desc: 'What I write code in.',
 		tools: [
 			{ slug: 'typescript', name: 'TypeScript' },
 			{ slug: 'javascript', name: 'JavaScript' },
@@ -64,26 +64,26 @@ export const ABOUT_PRINCIPLES = [
 	{ n: '01', text: 'Understand the code you write' },
 	{ n: '02', text: 'Test before you ship' },
 	{ n: '03', text: 'Performance matters' },
-	{ n: '04', text: 'Maintainability > cleverness' },
+	{ n: '04', text: 'Read the docs first' },
 ]
 
 export const EXPERIENCE_ITEMS = [
 	{
 		year: '2026 — Present',
 		title: 'Production Code',
-		desc: "Working with real production systems is different than building demos. Performance matters. Debugging production issues taught me more than any course. Getting feedback from senior devs, understanding why your code is slow, seeing what happens when you don't handle errors properly.",
+		desc: 'Backend internship on a production codebase. Debugging live issues, going through code review with senior developers, tracking down slow code and missing error handling.',
 		tags: ['TASKFORCE'],
 	},
 	{
 		year: 'Ongoing',
 		title: 'Linux & Systems',
-		desc: 'Using Linux daily (CachyOS) because I want to know how things actually work, not just use a black box. Understanding what’s happening on the OS level helps when debugging, deploying, or designing systems. Can’t write performant code if you don’t understand how the system works.',
+		desc: 'CachyOS as my daily system. Knowing what happens at the OS level pays off when debugging and deploying. Working through HackTheBox machines on the side.',
 		tags: ['HackTheBox + Linux deep dives'],
 	},
 	{
 		year: 'In progress',
 		title: 'Fundamentals & Algorithms',
-		desc: 'ИТМО prep for algorithms and computer science fundamentals. Not trying to be a competitive programmer, but understanding the fundamentals changes how you approach problems. Big O notation, data structures, why some solutions are better than others — that stuff matters.',
+		desc: 'Preparing for ITMO University: algorithms, data structures, complexity analysis.',
 		tags: [],
 	},
 ]
@@ -92,13 +92,13 @@ export const PROJECTS = [
 	{
 		name: 'skipy.dev',
 		url: 'https://github.com/skipydev/skipy.dev',
-		desc: "This site. Open source — the terminal chrome, the marquee, the ASCII donut, all hand-rolled with no extra dependencies. Copy whatever's useful.",
+		desc: "This site. The terminal windows, the marquee and the ASCII donut are hand-written, no UI libraries. Open source, take whatever's useful.",
 		tags: ['React', 'TypeScript', 'Vite'],
 	},
 	{
 		name: 'easy-ph',
 		url: 'https://github.com/skipydev/EasyPH',
-		desc: 'Built an EGE learning platform because existing ones suck or cost money. DeepSeek for the backend, actual resources, not hallucination. Sometimes the best project is just solving a problem that exists.',
+		desc: 'A free prep platform for the EGE (Russian state exam). The existing ones are paid or weak. DeepSeek on the backend, with answers based on real study materials.',
 		tags: ['React', 'TypeScript', 'Go'],
 	},
 ]

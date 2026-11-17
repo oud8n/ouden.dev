@@ -39,9 +39,8 @@ export function Stack() {
 						the <span className='highlight'>working</span> stack.
 					</h2>
 					<p className='section-description'>
-						Not a buzzword list. These are tools I write code with every day,
-						understand the trade-offs, know when they make sense and when
-						they don't.
+						Tools I've used in real projects, grouped by where they sit in
+						the stack.
 					</p>
 
 					<div className='stack-chapters'>
@@ -105,7 +104,7 @@ export function Stack() {
 					</div>
 
 					<div className='stack-footer'>
-						$ {totalTools} tools total — sorted by where they live in the work.
+						$ {totalTools} tools total
 					</div>
 				</div>
 			</div>
