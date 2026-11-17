@@ -1,6 +1,5 @@
 import {
 	DiscordIcon,
-	EmailIcon,
 	GithubIcon,
 	TelegramIcon,
 } from '../components/icons'
@@ -119,20 +118,18 @@ export const PROJECTS: Project[] = [
 	},
 ]
 
-const GITHUB_HANDLE = 'skipydev'
+const GITHUB_HANDLE = 'oud8n'
 export const GITHUB_URL = `https://github.com/${GITHUB_HANDLE}`
-const TELEGRAM_HANDLE = '@PACCBET_3A_CEBEPOM'
-export const TELEGRAM_URL = 'https://t.me/PACCBET_3A_CEBEPOM'
+const TELEGRAM_HANDLE = '@oud8n'
+export const TELEGRAM_URL = 'https://t.me/oud8n'
 const DISCORD_HANDLE = 'socoolbaby'
 const DISCORD_URL = 'https://discord.gg/VKqSreqpHw'
-const EMAIL_HANDLE = 'hello@skipy.dev'
-const EMAIL_URL = `mailto:${EMAIL_HANDLE}`
 
 export const CONTACTS = [
 	{
 		id: 'telegram',
 		name: 'Telegram',
-		sub: 'fastest',
+		sub: 'fastest reply',
 		handle: TELEGRAM_HANDLE,
 		url: TELEGRAM_URL,
 		Icon: TelegramIcon,
@@ -141,7 +138,7 @@ export const CONTACTS = [
 	{
 		id: 'github',
 		name: 'GitHub',
-		sub: 'code stuff',
+		sub: 'code',
 		handle: GITHUB_HANDLE,
 		url: GITHUB_URL,
 		Icon: GithubIcon,
@@ -150,20 +147,11 @@ export const CONTACTS = [
 	{
 		id: 'discord',
 		name: 'Discord',
-		sub: 'longer conversations',
+		sub: 'server',
 		handle: DISCORD_HANDLE,
 		url: DISCORD_URL,
 		Icon: DiscordIcon,
 		inFooter: true,
-	},
-	{
-		id: 'email',
-		name: 'Email',
-		sub: 'formal inquiries',
-		handle: EMAIL_HANDLE,
-		url: EMAIL_URL,
-		Icon: EmailIcon,
-		inFooter: false,
 	},
 ]
 
