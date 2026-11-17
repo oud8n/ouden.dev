@@ -3,9 +3,8 @@ import { useEffect } from 'react'
 const TARGETS = [
 	'.section-title',
 	'.section-description',
-	'.about-quote',
 	'.section-text',
-	'.whoami-card',
+	'.facts-card',
 	'.chapter',
 	'.timeline-item',
 	'.project',

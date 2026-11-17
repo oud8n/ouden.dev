@@ -152,12 +152,6 @@ button {
 	}
 }
 
-@keyframes caretBlink {
-	50% {
-		opacity: 0;
-	}
-}
-
 .profile-banner {
 	position: absolute;
 	top: 0;
@@ -957,105 +951,24 @@ main {
 	gap: 28px;
 }
 
-.about-quote {
-	font-family: 'Fraunces', serif;
-	font-style: italic;
-	font-size: clamp(19px, 2.2vw, 24px);
-	line-height: 1.55;
-	color: var(--ink);
-	padding-left: 24px;
-	border-left: 2px solid var(--red);
-}
-
 .section-text {
 	font-size: 15.5px;
 	color: var(--muted);
 	line-height: 1.9;
 }
 
-.terminal-window {
-	border: 1px solid var(--border);
-	border-radius: 0;
-	background: transparent;
-	overflow: hidden;
-	box-shadow: var(--shadow);
-}
-
-.terminal-titlebar {
+.facts-card {
 	display: flex;
 	align-items: center;
-	gap: 7px;
-	padding: 14px 18px;
+	gap: 28px;
+	padding: 28px 0;
+	border-top: 1px solid var(--border);
 	border-bottom: 1px solid var(--border);
-	background: var(--surface);
-}
 
-.terminal-dot {
-	width: 10px;
-	height: 10px;
-	border-radius: 50%;
-
-	&-red {
-		background: #ff5f56;
+	@media (max-width: 480px) {
+		flex-direction: column;
+		align-items: stretch;
 	}
-
-	&-yellow {
-		background: #ffbd2e;
-	}
-
-	&-green {
-		background: #27c93f;
-	}
-}
-
-.terminal-titlebar-name {
-	margin-left: 8px;
-	font-family: 'JetBrains Mono', monospace;
-	font-size: 13px;
-	color: var(--muted-2);
-	letter-spacing: 0.02em;
-}
-
-.whoami-card {
-	display: flex;
-	flex-direction: column;
-	align-self: start;
-}
-
-.whoami-content {
-	padding: 24px 28px;
-}
-
-.whoami-cmd {
-	font-family: 'JetBrains Mono', monospace;
-	font-size: 13px;
-	color: var(--muted);
-	margin: 16px 0 10px;
-
-	&:first-child {
-		margin-top: 0;
-	}
-}
-
-.whoami-prompt {
-	color: var(--red);
-	margin-right: 6px;
-}
-
-.whoami-cursor {
-	display: inline-block;
-	width: 8px;
-	height: 14px;
-	margin-left: 8px;
-	background: var(--ink);
-	vertical-align: middle;
-	animation: caretBlink 1s steps(1) infinite;
-}
-
-.whoami-body {
-	display: flex;
-	align-items: center;
-	gap: 24px;
 }
 
 .ascii-donut {
@@ -1065,113 +978,51 @@ main {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	@media (max-width: 480px) {
+		align-self: center;
+	}
 }
 
 .ascii-donut-canvas {
 	touch-action: none;
 }
 
-.whoami-info {
-	display: flex;
-	flex-direction: column;
-	gap: 14px;
-	min-width: 0;
+.facts-list {
 	flex: 1;
-}
-
-.whoami-row {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 4px 10px;
-	font-size: 15px;
-}
-
-.whoami-key {
-	font-family: 'JetBrains Mono', monospace;
-	color: var(--muted-2);
-	flex-shrink: 0;
-
-	&::after {
-		content: ':';
-	}
-}
-
-.whoami-value {
-	color: var(--ink);
-	font-weight: 700;
 	min-width: 0;
 }
 
-.whoami-value-accent {
-	color: var(--red);
-}
-
-.whoami-principles {
-	display: flex;
-	flex-direction: column;
-}
-
-.whoami-principle {
-	display: flex;
+.facts-row {
+	display: grid;
+	grid-template-columns: 64px minmax(0, 1fr);
+	gap: 16px;
 	align-items: baseline;
-	gap: 14px;
 	padding: 12px 0;
 	border-bottom: 1px solid var(--border);
-	transition:
-		padding-left 0.4s $ease-soft,
-		border-color 0.4s $ease-soft;
+
+	&:first-child {
+		padding-top: 0;
+	}
 
 	&:last-child {
+		padding-bottom: 0;
 		border-bottom: none;
 	}
-
-	&:hover {
-		padding-left: 4px;
-		border-color: var(--red);
-		.whoami-principle-n {
-			color: var(--red);
-		}
-	}
 }
 
-.whoami-principle-n {
-	font-family: 'JetBrains Mono', monospace;
-	font-size: 13px;
+.facts-key {
+	font-size: 11px;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
 	color: var(--muted-2);
-	flex-shrink: 0;
-	transition: color 0.4s $ease-soft;
 }
 
-.whoami-principle-text {
-	font-size: 16px;
-	color: var(--ink);
+.facts-value {
+	font-size: 15px;
 	font-weight: 500;
-}
-
-@media (max-width: 480px) {
-	.whoami-content {
-		padding: 24px 20px 12px;
-	}
-
-	.whoami-body {
-		flex-direction: column;
-		text-align: center;
-	}
-
-	.ascii-donut {
-		width: 200px;
-		height: 200px;
-	}
-
-	.whoami-info {
-		width: 100%;
-	}
-
-	.whoami-row {
-		flex-direction: column;
-		gap: 2px;
-		white-space: normal;
-	}
+	color: var(--ink);
+	line-height: 1.5;
 }
 
 .icon-mask {
