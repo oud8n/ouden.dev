@@ -1,5 +1,6 @@
 import type { RefObject } from 'react'
 import type { useMusicPlayer } from '../hooks'
+import { GITHUB_URL } from '../data/content'
 import { AvatarRecord } from './AvatarRecord'
 
 type HeroProps = {
@@ -44,18 +45,13 @@ export function Hero({
 								<span className='profile-handle'>
 									@oud8n · fullstack developer
 								</span>
-								<p className='about-quote hero-quote'>
-									"Making stuff that doesn't break"
-								</p>
 							</div>
 
 							<p className='hero-subtitle'>
-								19, backend intern. I write Go, TypeScript and NestJS; day to
-								day it's PostgreSQL, Docker and APIs, with some React when a
-								project needs a frontend. I like digging into how systems work
-								under the hood and writing code that works.
-								<br />
-								p.s. sometimes it doesn't.
+								Fullstack developer based in the Netherlands, working remotely.
+								I build products at Task Force and ship my own on the side. Go
+								for my backends, TypeScript and React for everything that runs
+								in a browser.
 							</p>
 
 							<div className='hero-buttons'>
@@ -64,15 +60,15 @@ export function Hero({
 									onClick={() => onScrollTo('contact')}
 									className='btn btn-fill magnetic'
 								>
-									dm
+									contact
 								</a>
 								<a
-									href='https://github.com/skipydev'
+									href={GITHUB_URL}
 									target='_blank'
 									rel='noopener noreferrer'
 									className='btn btn-outline magnetic'
 								>
-									git
+									github
 								</a>
 							</div>
 						</div>

@@ -12,8 +12,7 @@ export function Contact({ onScrollTo }: ContactProps) {
 				<div className='section-content'>
 					<h2 className='section-title contact-title'>Get in touch.</h2>
 					<p className='section-description'>
-						Open to internships and project work, or just a chat about code.
-						Telegram is the fastest way to reach me.
+						Open to remote work. Telegram is the fastest way to reach me.
 					</p>
 
 					<div className='contact-table'>
