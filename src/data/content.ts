@@ -98,10 +98,10 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
 	{
-		name: 'Физика.AI',
+		name: 'физика.ai',
 		status: 'in development',
 		image: 'projects/physics-ai.webp',
-		desc: 'AI platform for the physics EGE. A neural network generates a fresh problem for each of the 26 exam tasks, answers are checked right away, and the stats show which topics are lagging. Next.js frontend, Go backend with DeepSeek.',
+		desc: 'Physics prep for the EGE and OGE. Problems from the open FIPI bank plus fresh ones for every exam task; answers are checked right away, three attempts with a hint, and the stats show which topics are lagging. Next.js frontend, Go backend with DeepSeek.',
 		tags: ['Next.js', 'TypeScript', 'Go', 'DeepSeek'],
 	},
 	{
