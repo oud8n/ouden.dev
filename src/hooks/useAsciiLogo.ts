@@ -184,12 +184,14 @@ export function useAsciiLogo(
 				ctx.font = `${cell}px 'JetBrains Mono', monospace`
 				ctx.textAlign = 'center'
 				ctx.textBaseline = 'middle'
+				const light = !document.documentElement.classList.contains('dark-theme')
 				const ink = `rgb(${css('--ink-rgb')})`
 				const red = `rgb(${css('--red-rgb')})`
 
 				for (let i = 0; i < size; i++) {
 					if (!zbuffer[i]) continue
-					const level = Math.max(0, Math.min(1, (lum[i] + 0.35) / 1.35))
+					const lit = Math.max(0, Math.min(1, (lum[i] + 0.35) / 1.35))
+					const level = light ? 0.5 + (1 - lit) * 0.5 : lit
 					const ch = CHARS[Math.min(CHARS.length - 1, Math.floor(level * CHARS.length))]
 					ctx.fillStyle = accent[i] ? red : ink
 					ctx.fillText(
@@ -200,7 +202,7 @@ export function useAsciiLogo(
 				}
 			}
 
-			if (!dragging && !reduceMotion) yaw += 0.006
+			if (!dragging && !reduceMotion) yaw += 0.0015
 			raf = requestAnimationFrame(draw)
 		}
 
