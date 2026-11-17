@@ -8,7 +8,6 @@ import { Header } from './components/Header'
 import { Hero } from './components/Hero'
 import { Projects } from './components/Projects'
 import { Stack } from './components/Stack'
-import { VinylPlayer } from './components/VinylPlayer'
 import {
 	useAsciiBackground,
 	useBannerParallax,
@@ -29,7 +28,7 @@ export default function App() {
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
 	const scrollProgress = useScrollProgress()
-	const { audioRef, isPlaying, toggle } = useMusicPlayer()
+	const music = useMusicPlayer()
 	const asciiCanvasRef = useRef<HTMLCanvasElement>(null)
 	const bannerRef = useRef<HTMLDivElement>(null)
 
@@ -80,19 +79,13 @@ export default function App() {
 				isMenuOpen={isMenuOpen}
 				onToggleMenu={() => setIsMenuOpen(prev => !prev)}
 				onNavClick={handleNavClick}
-				player={
-					<VinylPlayer
-						audioRef={audioRef}
-						isPlaying={isPlaying}
-						onToggle={toggle}
-					/>
-				}
 			/>
 
 			<main className={isMenuOpen ? 'is-blurred' : ''}>
 				<Hero
 					bannerRef={bannerRef}
 					asciiCanvasRef={asciiCanvasRef}
+					music={music}
 					onScrollTo={handleScroll}
 				/>
 				<About />
