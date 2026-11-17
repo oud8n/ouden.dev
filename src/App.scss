@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&family=Inter:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&family=Inter:wght@700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
 :root {
 	--bg-rgb: 247 242 232;
 	--ink-rgb: 10 10 10;
 	--red-rgb: 209 20 20;
 	--border-rgb: 10 10 10;
+	--shadow: 0 16px 32px rgb(0 0 0 / 0.08);
 }
 
 html.dark-theme {
@@ -12,6 +13,7 @@ html.dark-theme {
 	--ink-rgb: 245 245 245;
 	--red-rgb: 255 59 48;
 	--border-rgb: 245 245 245;
+	--shadow: 0 24px 48px rgb(0 0 0 / 0.28);
 }
 
 :root,
@@ -37,21 +39,19 @@ html.dark-theme {
 
 html,
 body {
-	height: 100%;
 	background: var(--bg);
-	overflow-x: hidden;
 	transition:
 		background 0.3s ease,
 		color 0.3s ease;
 }
 
 body {
+	overflow-x: clip;
 	color: var(--ink);
 	font-family: 'JetBrains Mono', monospace;
 	-webkit-font-smoothing: antialiased;
 }
 
-// Grain/noise overlay — subtle but makes bg feel alive
 .noise-overlay {
 	position: fixed;
 	top: 0;
@@ -186,7 +186,6 @@ button {
 .scroll-progress-bar {
 	height: 100%;
 	background: var(--red);
-	border-radius: 0 2px 2px 0;
 	transition: width 0.1s linear;
 }
 
@@ -200,6 +199,25 @@ button {
 	&.is-visible {
 		opacity: 1;
 		transform: translateY(0);
+	}
+
+	.reveal & {
+		transform: translateY(16px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.reveal,
+	.reveal .reveal {
+		opacity: 1;
+		transform: none;
+		transition: none;
+	}
+}
+
+@keyframes caretBlink {
+	50% {
+		opacity: 0;
 	}
 }
 
@@ -259,8 +277,6 @@ button {
 	flex-shrink: 0;
 	width: 280px;
 	height: 280px;
-
-	// Добавляем максимальную ширину в процентах, чтобы на мелких экранах/планшетах она сжималась
 	max-width: 85vw;
 	max-height: 85vw;
 
@@ -320,17 +336,24 @@ button {
 	font-size: clamp(42px, 6vw, 72px);
 	letter-spacing: -0.02em;
 	display: flex;
-	align-items: baseline;
+	align-items: center;
 	justify-content: center;
 	gap: 10px;
 }
+
 .verified-badge {
-	width: 1em; /* Размер подстраивается под размер текста */
-	height: 1em;
-	color: var(--red); /* Красим в красный акцент, будет разъёб */
+	width: 0.8em;
+	height: 0.8em;
+	color: var(--red);
 	flex-shrink: 0;
-	margin-top: 5px;
-	transform: translateY(14px);
+}
+
+.cursor-blink {
+	display: inline-block;
+	width: 0.08em;
+	height: 0.85em;
+	background: var(--red);
+	animation: caretBlink 1s steps(1) infinite;
 }
 
 .profile-handle {
@@ -405,6 +428,7 @@ button {
 	border-radius: 50%;
 	background: var(--red);
 	box-shadow: 0 0 8px rgb(var(--red-rgb) / 0.8);
+	animation: caretBlink 1.6s ease-in-out infinite;
 }
 
 .header {
@@ -553,10 +577,8 @@ button {
 }
 
 @media (min-width: 769px) {
-	.mobile-nav-trigger,
-	nav.mobile-nav-trigger,
-	.mobile-nav.mobile-nav-trigger {
-		display: none !important;
+	.header .mobile-nav-trigger {
+		display: none;
 	}
 }
 
@@ -575,10 +597,6 @@ button {
 	transition:
 		background-color 0.25s ease,
 		border-color 0.25s ease;
-
-	.burger-line {
-		background-color: var(--ink);
-	}
 
 	&.is-open {
 		background: var(--red);
@@ -626,6 +644,7 @@ button {
 	right: 0;
 	width: 100vw;
 	height: 100vh;
+	height: 100dvh;
 	background: var(--bg);
 	display: flex;
 	flex-direction: column;
@@ -755,17 +774,7 @@ main {
 	position: relative;
 	padding: 100px 24px;
 	overflow: hidden;
-
-	@media (min-width: 640px) {
-		padding: 120px 48px;
-	}
-	@media (min-width: 1600px) {
-		padding: 140px 80px;
-	}
-}
-
-.section-wide {
-	padding: 100px 24px;
+	border-bottom: 1px solid var(--border);
 
 	@media (min-width: 640px) {
 		padding: 120px 48px;
@@ -840,14 +849,6 @@ main {
 	width: 100%;
 }
 
-.section {
-	border-bottom: 1px solid var(--border);
-}
-
-.section-wide {
-	border-bottom: 1px solid var(--border);
-}
-
 .about-grid {
 	display: grid;
 	grid-template-columns: 1fr;
@@ -908,7 +909,7 @@ main {
 	border-radius: 0;
 	background: transparent;
 	overflow: hidden;
-	box-shadow: 0 24px 48px rgb(0 0 0 / 0.28);
+	box-shadow: var(--shadow);
 }
 
 .terminal-titlebar {
@@ -953,10 +954,7 @@ main {
 }
 
 .whoami-content {
-	flex: 1;
-	min-height: 0;
 	padding: 24px 28px;
-	overflow-y: auto;
 }
 
 .whoami-cmd {
@@ -982,6 +980,7 @@ main {
 	margin-left: 8px;
 	background: var(--ink);
 	vertical-align: middle;
+	animation: caretBlink 1s steps(1) infinite;
 }
 
 .whoami-body {
@@ -1030,7 +1029,7 @@ main {
 
 .whoami-value {
 	color: var(--ink);
-	font-weight: 600;
+	font-weight: 700;
 	min-width: 0;
 }
 
@@ -1240,8 +1239,12 @@ main {
 	display: inline-flex;
 	align-items: center;
 	flex-shrink: 0;
-	opacity: 0.16;
+	opacity: 0.35;
 	transition: opacity 0.15s ease;
+
+	.chapter-tools-static & {
+		opacity: 1;
+	}
 }
 
 .tool-chip-wrap:hover {
@@ -1253,7 +1256,6 @@ main {
 	display: inline-flex;
 	align-items: center;
 	gap: 14px;
-	cursor: pointer;
 }
 
 .tool-chip-icon {
@@ -1354,14 +1356,19 @@ main {
 	font-size: 17px;
 }
 
-.log-tag {
+.log-tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
 	margin-left: auto;
+}
+
+.log-tag {
 	font-family: 'JetBrains Mono', monospace;
 	font-size: 11px;
 	color: var(--muted-2);
 	padding: 4px 10px;
 	border: 1px solid var(--border);
-	border-radius: 6px;
 	white-space: nowrap;
 }
 
@@ -1376,7 +1383,7 @@ main {
 		padding: 4px 20px;
 	}
 
-	.log-tag {
+	.log-tags {
 		margin-left: 0;
 	}
 }
@@ -1457,7 +1464,6 @@ main {
 	color: var(--muted-2);
 	padding: 4px 10px;
 	border: 1px solid var(--border);
-	border-radius: 6px;
 }
 
 .project-row-all {
@@ -1497,7 +1503,7 @@ main {
 }
 
 .contact-title {
-	font-size: clamp(44px, 8vw, 88px) !important;
+	font-size: clamp(44px, 8vw, 88px);
 }
 
 .contact-table {
@@ -1511,6 +1517,7 @@ main {
 	display: grid;
 	grid-template-columns: 48px 1fr auto;
 	align-items: center;
+	gap: 16px;
 	padding: 16px 0;
 	font-size: 11px;
 	text-transform: uppercase;
@@ -1519,7 +1526,7 @@ main {
 	border-bottom: 1px solid var(--border);
 
 	@media (min-width: 640px) {
-		grid-template-columns: 48px 1fr 240px;
+		grid-template-columns: 48px 1fr 240px 24px;
 	}
 }
 
@@ -1627,6 +1634,7 @@ main {
 	font-size: 14px;
 	color: var(--muted);
 	white-space: nowrap;
+	text-align: right;
 	transition: color 0.3s ease;
 }
 
@@ -1680,7 +1688,7 @@ main {
 	align-items: center;
 	gap: 10px;
 	font-size: 13px;
-	font-weight: 600;
+	font-weight: 700;
 	color: var(--ink);
 	border: 1.5px solid var(--border);
 	padding: 12px 24px;
