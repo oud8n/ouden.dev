@@ -297,18 +297,16 @@ button {
 		outline-offset: 8px;
 	}
 
-	&:hover .avatar-label,
-	&:focus-visible .avatar-label,
-	&.is-playing .avatar-label {
-		opacity: 1;
-		transform: translate(-50%, -50%) scale(1);
+	@media (hover: hover) {
+		&:hover .avatar-label,
+		&:focus-visible .avatar-label,
+		&.is-playing .avatar-label {
+			opacity: 1;
+			transform: translate(-50%, -50%) scale(1);
+		}
 	}
 
 	&.is-playing {
-		.profile-avatar {
-			animation-play-state: running;
-		}
-
 		.avatar-grooves {
 			opacity: 1;
 		}
@@ -340,20 +338,6 @@ button {
 	display: block;
 	filter: grayscale(100%) contrast(1.05);
 	transition: filter 0.4s ease;
-	animation: spinSlow 14s linear infinite;
-	animation-play-state: paused;
-}
-
-@keyframes spinSlow {
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.profile-avatar {
-		animation: none;
-	}
 }
 
 .avatar-record {
@@ -402,9 +386,9 @@ button {
 		height: 34%;
 	}
 
+	// touch: nothing on top of the face, the floating hint below does the job
 	@media (hover: none) {
-		opacity: 1;
-		transform: translate(-50%, -50%) scale(1);
+		display: none;
 	}
 }
 
@@ -423,6 +407,42 @@ button {
 	&:hover,
 	&.is-playing {
 		color: var(--ink);
+	}
+
+	@media (hover: none) {
+		&:not(.is-playing) {
+			color: var(--ink);
+			animation: floatHint 2.6s ease-in-out infinite;
+
+			.now-playing-title,
+			.now-playing-bars {
+				display: none;
+			}
+
+			.now-playing-hint {
+				display: inline;
+			}
+		}
+	}
+}
+
+.now-playing-hint {
+	display: none;
+}
+
+@keyframes floatHint {
+	0%,
+	100% {
+		transform: translateY(0);
+	}
+	50% {
+		transform: translateY(-6px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.now-playing {
+		animation: none !important;
 	}
 }
 
