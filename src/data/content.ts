@@ -22,7 +22,6 @@ export const STACK_CHAPTERS = [
 			{ slug: 'javascript', name: 'JavaScript' },
 			{ slug: 'python', name: 'Python' },
 			{ slug: 'go', name: 'Go' },
-			{ slug: 'cplusplus', name: 'C++' },
 		],
 	},
 	{
@@ -71,7 +70,7 @@ export const EXPERIENCE_ITEMS = [
 	{
 		year: '2026 — Present',
 		title: 'Production Code',
-		desc: 'Backend internship on a production codebase. Debugging live issues, going through code review with senior developers, tracking down slow code and missing error handling.',
+		desc: 'Backend intern at TASKFORCE, a team that builds websites. Debugging live issues, going through code review with senior developers, tracking down slow code and missing error handling.',
 		tags: ['TASKFORCE'],
 	},
 	{
@@ -83,7 +82,7 @@ export const EXPERIENCE_ITEMS = [
 	{
 		year: 'In progress',
 		title: 'Fundamentals & Algorithms',
-		desc: 'Preparing for ITMO University: algorithms, data structures, complexity analysis.',
+		desc: 'Preparing for ITMO University: algorithms, data structures, complexity analysis. Learning C++ along the way.',
 		tags: [],
 	},
 ]
@@ -96,16 +95,16 @@ export const PROJECTS = [
 		tags: ['React', 'TypeScript', 'Vite'],
 	},
 	{
-		name: 'easy-ph',
-		url: 'https://github.com/skipydev/EasyPH',
-		desc: 'A free prep platform for the EGE (Russian state exam). The existing ones are paid or weak. DeepSeek on the backend, with answers based on real study materials.',
-		tags: ['React', 'TypeScript', 'Go'],
+		name: 'chronly',
+		url: 'https://github.com/skipy-force/chronly',
+		desc: 'Desktop time tracker for Hyprland. Watches the active window in the background and sorts the time into projects on its own: a Today dashboard, a timeline, estimate vs. actual per task. Everything stays local in SQLite.',
+		tags: ['Go', 'Wails', 'React', 'SQLite'],
 	},
 ]
 
 const GITHUB_HANDLE = 'skipydev'
 export const GITHUB_URL = `https://github.com/${GITHUB_HANDLE}`
-const TELEGRAM_HANDLE = '@skipydev'
+const TELEGRAM_HANDLE = '@PACCBET_3A_CEBEPOM'
 export const TELEGRAM_URL = 'https://t.me/PACCBET_3A_CEBEPOM'
 const DISCORD_HANDLE = 'socoolbaby'
 const DISCORD_URL = 'https://discord.gg/VKqSreqpHw'
