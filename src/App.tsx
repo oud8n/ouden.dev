@@ -10,12 +10,9 @@ import { Projects } from './components/Projects'
 import { Stack } from './components/Stack'
 import {
 	useAsciiBackground,
-	useBannerParallax,
-	useCursorDot,
 	useMagnetic,
 	useMusicPlayer,
 	useRevealAll,
-	useScrollProgress,
 } from './hooks'
 
 export default function App() {
@@ -27,10 +24,8 @@ export default function App() {
 
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
 
-	const scrollProgress = useScrollProgress()
 	const music = useMusicPlayer()
 	const asciiCanvasRef = useRef<HTMLCanvasElement>(null)
-	const bannerRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
 		document.documentElement.classList.toggle('dark-theme', isDark)
@@ -45,10 +40,8 @@ export default function App() {
 	}, [isMenuOpen])
 
 	useRevealAll()
-	useCursorDot()
 	useMagnetic()
 	useAsciiBackground(asciiCanvasRef, isDark)
-	useBannerParallax(bannerRef)
 
 	const handleScroll = (id: string) => {
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -64,15 +57,6 @@ export default function App() {
 		<>
 			<div className='noise-overlay' />
 
-			<div className='cursor-dot' />
-
-			<div className='scroll-progress-track'>
-				<div
-					className='scroll-progress-bar'
-					style={{ width: `${scrollProgress}%` }}
-				/>
-			</div>
-
 			<Header
 				isDark={isDark}
 				onToggleTheme={() => setIsDark(!isDark)}
@@ -83,7 +67,6 @@ export default function App() {
 
 			<main className={isMenuOpen ? 'is-blurred' : ''}>
 				<Hero
-					bannerRef={bannerRef}
 					asciiCanvasRef={asciiCanvasRef}
 					music={music}
 					onScrollTo={handleScroll}

@@ -1,8 +1,5 @@
 export { useRevealAll } from './useRevealAll'
-export { useScrollProgress } from './useScrollProgress'
-export { useCursorDot } from './useCursorDot'
 export { useMagnetic } from './useMagnetic'
-export { useBannerParallax } from './useBannerParallax'
 export { useAsciiBackground } from './useAsciiBackground'
 export { useAsciiDonut } from './useAsciiDonut'
 export { useMusicPlayer } from './useMusicPlayer'

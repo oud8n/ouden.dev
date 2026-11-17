@@ -119,82 +119,16 @@ button {
 	}
 }
 
-.cursor-dot {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 9px;
-	height: 9px;
-	margin-left: -4.5px;
-	margin-top: -4.5px;
-	border-radius: 50%;
-	background: var(--red);
-	box-shadow: 0 0 12px rgb(var(--red-rgb) / 0.7);
-	pointer-events: none;
-	z-index: 9999;
-	opacity: 0;
-	transition:
-		width 0.2s ease,
-		height 0.2s ease,
-		margin 0.2s ease,
-		background 0.2s ease,
-		opacity 0.2s ease;
-	will-change: transform;
-
-	html.has-custom-cursor & {
-		opacity: 1;
-	}
-
-	&.is-hovering {
-		width: 34px;
-		height: 34px;
-		margin-left: -17px;
-		margin-top: -17px;
-		background: transparent;
-		border: 1.5px solid var(--red);
-		box-shadow: none;
-	}
-}
-
-@media (pointer: fine) {
-	html.has-custom-cursor,
-	html.has-custom-cursor * {
-		cursor: none !important;
-	}
-}
-
-@media (hover: none), (max-width: 768px) {
-	.cursor-dot {
-		display: none !important;
-	}
-}
-
 .magnetic {
 	transition: transform 0.15s ease-out;
 }
 
-.scroll-progress-track {
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 3px;
-	z-index: 200;
-	pointer-events: none;
-}
-
-.scroll-progress-bar {
-	height: 100%;
-	background: var(--red);
-	transition: width 0.1s linear;
-}
-
 .reveal {
 	opacity: 0;
-	transform: translateY(36px);
+	transform: translateY(12px);
 	transition:
-		opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--r-delay, 0s),
-		transform 0.9s cubic-bezier(0.16, 1, 0.3, 1) var(--r-delay, 0s);
+		opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
 
 	&.is-visible {
 		opacity: 1;
@@ -202,7 +136,9 @@ button {
 	}
 
 	.reveal & {
-		transform: translateY(16px);
+		opacity: 1;
+		transform: none;
+		transition: none;
 	}
 }
 
@@ -230,7 +166,6 @@ button {
 	overflow: hidden;
 	background: var(--surface);
 	border-bottom: 1px solid var(--border);
-	will-change: transform;
 }
 
 .banner-canvas {
@@ -561,25 +496,12 @@ button {
 
 	&:hover {
 		color: var(--red);
-		.scroll-cue-arrow {
-			animation: bounceArrow 0.6s ease infinite alternate;
-		}
 	}
 }
 
 .scroll-cue-arrow {
 	width: 22px;
 	height: 22px;
-	animation: bounceArrow 1.4s ease infinite alternate;
-}
-
-@keyframes bounceArrow {
-	0% {
-		transform: translateY(0);
-	}
-	100% {
-		transform: translateY(8px);
-	}
 }
 
 .scroll-cue-text {
