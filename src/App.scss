@@ -4,6 +4,7 @@
 	--bg-rgb: 247 242 232;
 	--ink-rgb: 10 10 10;
 	--red-rgb: 209 20 20;
+	--maroon: rgb(118 22 30);
 	--border-rgb: 10 10 10;
 	--shadow: 0 16px 32px rgb(0 0 0 / 0.08);
 }
@@ -12,6 +13,7 @@ html.dark-theme {
 	--bg-rgb: 10 10 10;
 	--ink-rgb: 245 245 245;
 	--red-rgb: 255 59 48;
+	--maroon: rgb(112 22 24);
 	--border-rgb: 245 245 245;
 	--shadow: 0 24px 48px rgb(0 0 0 / 0.28);
 }
@@ -1378,17 +1380,6 @@ main {
 	display: inline-flex;
 	align-items: center;
 	flex-shrink: 0;
-	opacity: 0.35;
-	transition: opacity 0.15s ease;
-
-	.chapter-tools-static & {
-		opacity: 1;
-	}
-}
-
-.tool-chip-wrap:hover {
-	opacity: 1;
-	transition: opacity 0.08s ease;
 }
 
 .tool-chip {
@@ -1401,16 +1392,16 @@ main {
 	width: 28px;
 	height: 28px;
 	flex-shrink: 0;
-	background-color: var(--ink);
-	transition: background-color 0.15s ease 0.02s;
+	background-color: var(--maroon);
+	transition: background-color 0.15s ease;
 }
 
 .tool-chip-name {
 	font-family: 'Inter', sans-serif;
 	font-weight: 700;
 	font-size: clamp(20px, 2.4vw, 28px);
-	color: var(--ink);
-	transition: color 0.15s ease 0.02s;
+	color: var(--maroon);
+	transition: color 0.15s ease;
 }
 
 .tool-chip:hover {
@@ -1424,7 +1415,7 @@ main {
 }
 
 .tool-chip-dot {
-	color: var(--muted-2);
+	color: var(--maroon);
 	margin: 0 22px;
 	font-size: 24px;
 	user-select: none;
