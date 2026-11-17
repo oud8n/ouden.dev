@@ -6,7 +6,6 @@ export function Experience() {
 		<section id='experience' className='section'>
 			<div className='reveal'>
 				<div className='section-content'>
-					<div className='section-label'>$ cat timeline.log</div>
 					<h2 className='section-title'>Learning by shipping.</h2>
 
 					<div className='terminal-window experience-log reveal'>

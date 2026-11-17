@@ -14,7 +14,6 @@ export function About() {
 		<section id='about' className='section'>
 			<div className='reveal'>
 				<div className='section-content'>
-					<div className='section-label'>$ whoami</div>
 					<h2 className='section-title'>
 						Mostly <span className='highlight'>backend.</span>
 					</h2>

@@ -11,7 +11,6 @@ export function Contact({ onScrollTo }: ContactProps) {
 		<section id='contact' className='section contact-section'>
 			<div className='reveal'>
 				<div className='section-content'>
-					<div className='section-label'>$ contact --open</div>
 					<h2 className='section-title contact-title'>Get in touch.</h2>
 					<p className='section-description'>
 						Open to internships and project work, or just a chat about code.

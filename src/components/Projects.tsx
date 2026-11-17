@@ -7,7 +7,6 @@ export function Projects() {
 		<section id='projects' className='section'>
 			<div className='reveal'>
 				<div className='section-content'>
-					<div className='section-label'>$ ls ~/projects</div>
 					<h2 className='section-title'>
 						Things I've <span className='highlight'>built.</span>
 					</h2>
