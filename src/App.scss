@@ -280,11 +280,37 @@ button {
 	max-width: 85vw;
 	max-height: 85vw;
 
+	position: relative;
+	display: block;
+	border: none;
 	border-radius: 50%;
 	background: var(--bg);
 	padding: 7px;
 	box-shadow: 0 0 0 3px var(--red);
+	cursor: pointer;
 	transition: box-shadow 0.3s ease;
+
+	&:focus-visible {
+		outline: 2px solid var(--red);
+		outline-offset: 8px;
+	}
+
+	&:hover .avatar-label,
+	&:focus-visible .avatar-label,
+	&.is-playing .avatar-label {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+
+	&.is-playing {
+		.profile-avatar {
+			animation-play-state: running;
+		}
+
+		.avatar-grooves {
+			opacity: 1;
+		}
+	}
 
 	@media (min-width: 768px) {
 		width: 340px;
@@ -312,6 +338,136 @@ button {
 	display: block;
 	filter: grayscale(100%) contrast(1.05);
 	transition: filter 0.4s ease;
+	animation: spinSlow 14s linear infinite;
+	animation-play-state: paused;
+}
+
+@keyframes spinSlow {
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.profile-avatar {
+		animation: none;
+	}
+}
+
+.avatar-record {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 22px;
+}
+
+// concentric record grooves over the photo while playing
+.avatar-grooves {
+	position: absolute;
+	inset: 7px;
+	border-radius: 50%;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.5s ease;
+	background: repeating-radial-gradient(
+		circle,
+		transparent 0 3px,
+		rgb(0 0 0 / 0.18) 3px 4px
+	);
+}
+
+.avatar-label {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 22%;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background: var(--red);
+	box-shadow: 0 0 0 6px rgb(0 0 0 / 0.35);
+	color: #0c0c0c;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transform: translate(-50%, -50%) scale(0.85);
+	transition:
+		opacity 0.25s ease,
+		transform 0.25s ease;
+
+	svg {
+		width: 34%;
+		height: 34%;
+	}
+
+	@media (hover: none) {
+		opacity: 1;
+		transform: translate(-50%, -50%) scale(1);
+	}
+}
+
+.now-playing {
+	display: inline-flex;
+	align-items: center;
+	gap: 10px;
+	padding: 0;
+	border: none;
+	background: none;
+	font-size: 13px;
+	color: var(--muted-2);
+	cursor: pointer;
+	transition: color 0.3s ease;
+
+	&:hover,
+	&.is-playing {
+		color: var(--ink);
+	}
+}
+
+.now-playing-note {
+	color: var(--red);
+}
+
+.now-playing-bars {
+	display: flex;
+	align-items: flex-end;
+	gap: 2px;
+	height: 12px;
+
+	span {
+		width: 2.5px;
+		height: 100%;
+		background: var(--red);
+		transform: scaleY(0.25);
+		transform-origin: bottom;
+	}
+
+	.is-playing & span {
+		animation: eqBar 0.9s ease-in-out infinite;
+
+		&:nth-child(1) {
+			animation-delay: -0.6s;
+		}
+		&:nth-child(2) {
+			animation-delay: -0.2s;
+		}
+		&:nth-child(3) {
+			animation-delay: -0.9s;
+		}
+		&:nth-child(4) {
+			animation-delay: -0.4s;
+		}
+	}
+}
+
+@keyframes eqBar {
+	0%,
+	100% {
+		transform: scaleY(0.3);
+	}
+	50% {
+		transform: scaleY(1);
+	}
 }
 
 .profile-info-wrap {
@@ -1734,81 +1890,5 @@ main {
 	&:hover {
 		color: var(--red);
 		transform: translateY(-3px);
-	}
-}
-
-.vinyl-btn {
-	width: 38px;
-	height: 38px;
-	flex-shrink: 0;
-	display: inline-flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0;
-	border: 1px solid var(--border);
-	border-radius: 0;
-	background: var(--bg);
-	cursor: pointer;
-	transition: border-color 0.2s ease;
-
-	&:hover,
-	&.is-playing {
-		border-color: var(--red);
-	}
-
-	&:focus-visible {
-		outline: 2px solid var(--red);
-		outline-offset: 2px;
-	}
-}
-
-.vinyl-disc {
-	width: 26px;
-	height: 26px;
-	border-radius: 50%;
-	background: repeating-radial-gradient(
-		circle,
-		#0c0c0c 0px,
-		#0c0c0c 1.5px,
-		#262626 2px,
-		#0c0c0c 2.5px
-	);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
-	.vinyl-btn.is-playing & {
-		animation: spinSlow 4s linear infinite;
-	}
-}
-
-@keyframes spinSlow {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-@media (prefers-reduced-motion: reduce) {
-	.vinyl-btn.is-playing .vinyl-disc {
-		animation: none;
-	}
-}
-
-.vinyl-label {
-	width: 11px;
-	height: 11px;
-	border-radius: 50%;
-	background: var(--red);
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	color: #0c0c0c;
-
-	svg {
-		width: 6px;
-		height: 6px;
 	}
 }
