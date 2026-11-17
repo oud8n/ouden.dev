@@ -89,9 +89,9 @@ export const EXPERIENCE_ITEMS: {
 	{
 		year: 'Jul 2026 — now',
 		title: 'Fullstack developer',
-		desc: 'Full-cycle engineering team building products for clients. I work across the stack. On Flip Flow, a platform for US fix & flip real estate investments, I built backend features in NestJS and investor-facing pages in TypeScript and React.',
+		desc: '[Taskforce](https://taskforce.now/) is a full-cycle engineering team building products for clients. I work across the stack. On [Flip Flow](https://flipflow.fund/), a platform for US fix & flip real estate investments, I built backend features in NestJS and investor-facing pages in TypeScript and React.',
 		tags: [
-			{ label: 'Task Force', url: 'https://taskforce.now/' },
+			{ label: 'Taskforce', url: 'https://taskforce.now/' },
 			{ label: 'Flip Flow', url: 'https://flipflow.fund/' },
 		],
 	},
