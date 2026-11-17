@@ -5,8 +5,6 @@ type Tool = (typeof STACK_CHAPTERS)[number]['tools'][number]
 
 const totalTools = STACK_CHAPTERS.reduce((sum, c) => sum + c.tools.length, 0)
 
-// enough repeats so each half of the track comfortably outspans any viewport width,
-// otherwise the seamless -50% loop shows a gap for short tool lists
 const MIN_ITEMS_PER_HALF = 16
 const SECONDS_PER_ITEM = 9
 
