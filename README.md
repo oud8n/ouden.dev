@@ -1,7 +1,7 @@
 # { skipy.dev }
 
 My personal portfolio site — built with React, TypeScript, Vite and SCSS.
-Live at [skipy.dev](https://skipy.dev).
+Live at [skipydev.github.io/skipy.dev](https://skipydev.github.io/skipy.dev/).
 
 ## Open source
 
