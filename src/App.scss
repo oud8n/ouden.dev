@@ -348,13 +348,6 @@ button {
 	flex-shrink: 0;
 }
 
-.cursor-blink {
-	display: inline-block;
-	width: 0.08em;
-	height: 0.85em;
-	background: var(--red);
-	animation: caretBlink 1s steps(1) infinite;
-}
 
 .profile-handle {
 	font-size: 15px;
@@ -1499,7 +1492,7 @@ main {
 .contact-table {
 	display: flex;
 	flex-direction: column;
-	margin-bottom: 56px;
+	margin-bottom: 40px;
 	border-top: 1px solid var(--border);
 }
 
@@ -1653,8 +1646,6 @@ main {
 	justify-content: flex-end;
 	flex-wrap: wrap;
 	gap: 24px;
-	padding-top: 48px;
-	border-top: 1px solid var(--border);
 }
 
 .contact-back-top {
