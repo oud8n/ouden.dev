@@ -3,8 +3,6 @@ import { STACK_CHAPTERS } from '../data/content'
 
 type Tool = (typeof STACK_CHAPTERS)[number]['tools'][number]
 
-const totalTools = STACK_CHAPTERS.reduce((sum, c) => sum + c.tools.length, 0)
-
 const MIN_ITEMS_PER_HALF = 16
 const SECONDS_PER_ITEM = 9
 
@@ -32,7 +30,6 @@ export function Stack() {
 		<section id='stack' className='section'>
 			<div className='reveal'>
 				<div className='section-content'>
-					<div className='section-label'>$ ls ~/stack</div>
 					<h2 className='section-title'>
 						the <span className='highlight'>working</span> stack.
 					</h2>
@@ -88,21 +85,13 @@ export function Stack() {
 									</div>
 
 									<div className='chapter-tools-static'>
-										{chapter.tools.map((tool, i) => (
-											<ToolChip
-												key={tool.name}
-												tool={tool}
-												showDot={i < chapter.tools.length - 1}
-											/>
+										{chapter.tools.map(tool => (
+											<ToolChip key={tool.name} tool={tool} showDot={false} />
 										))}
 									</div>
 								</div>
 							)
 						})}
-					</div>
-
-					<div className='stack-footer'>
-						$ {totalTools} tools total
 					</div>
 				</div>
 			</div>

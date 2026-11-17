@@ -270,7 +270,7 @@ button {
 	flex: 1;
 	min-width: 0;
 	justify-content: center;
-	padding: 40px 0 60px;
+	padding: 40px 0 120px;
 }
 
 .profile-avatar-wrap {
@@ -316,8 +316,8 @@ button {
 	}
 
 	@media (min-width: 1200px) {
-		width: 480px;
-		height: 480px;
+		width: min(480px, 42vh);
+		height: min(480px, 42vh);
 
 		&:hover {
 			box-shadow: 0 0 0 3px var(--border);
@@ -640,7 +640,7 @@ button {
 	color: rgb(var(--red-rgb) / 0.8);
 	display: none;
 
-	@media (min-width: 481px) {
+	@media (min-width: 481px) and (max-width: 768px), (min-width: 1200px) {
 		display: inline;
 	}
 }
@@ -807,19 +807,19 @@ button {
 	flex-direction: column;
 	justify-content: flex-start;
 	padding: 110px 28px 100px;
-	transform: translateX(100%);
+	clip-path: inset(0 0 0 100%);
 	visibility: hidden;
 	pointer-events: none;
 	transition:
-		transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+		clip-path 0.45s cubic-bezier(0.16, 1, 0.3, 1),
 		visibility 0.45s;
 	z-index: 101;
 
 	&.is-open {
-		transform: translateX(0);
+		clip-path: inset(0);
 		visibility: visible;
 		transition:
-			transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
+			clip-path 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.3s,
 			visibility 0.5s 0.3s;
 		pointer-events: auto;
 	}
@@ -945,15 +945,6 @@ main {
 	position: relative;
 	z-index: 10;
 	width: 100%;
-}
-
-.section-label {
-	font-size: 12px;
-	font-weight: 700;
-	letter-spacing: 0.16em;
-	color: var(--red);
-	text-transform: uppercase;
-	margin-bottom: 24px;
 }
 
 .section-title {
@@ -1260,10 +1251,6 @@ main {
 		gap: 2px;
 		white-space: normal;
 	}
-
-	.whoami-principle {
-		flex-wrap: wrap;
-	}
 }
 
 .icon-mask {
@@ -1347,6 +1334,8 @@ main {
 	position: relative;
 	overflow: hidden;
 	width: 100%;
+	-webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+	mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 
 	&:hover .marquee-track {
 		animation-play-state: paused;
@@ -1362,7 +1351,7 @@ main {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
-		row-gap: 16px;
+		gap: 16px 28px;
 	}
 }
 
@@ -1436,12 +1425,6 @@ main {
 	font-size: 24px;
 	user-select: none;
 	flex-shrink: 0;
-}
-
-.stack-footer {
-	font-size: 12px;
-	color: var(--muted-2);
-	letter-spacing: 0.02em;
 }
 
 @media (max-width: 480px) {
@@ -1803,6 +1786,28 @@ main {
 	}
 }
 
+@media (max-width: 639px) {
+	.contact-row,
+	.contact-row-head {
+		grid-template-columns: 32px 1fr;
+		column-gap: 12px;
+		row-gap: 6px;
+	}
+
+	.contact-row-handle {
+		grid-column: 2;
+		text-align: left;
+		white-space: normal;
+		overflow-wrap: anywhere;
+		font-size: 13px;
+		padding-left: 44px;
+	}
+
+	.contact-row-sub {
+		display: none;
+	}
+}
+
 .contact-closing {
 	display: flex;
 	align-items: center;
@@ -1861,11 +1866,12 @@ main {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: center;
 	gap: 16px;
 	text-align: center;
 
 	@media (min-width: 640px) {
+		justify-content: space-between;
 		text-align: left;
 	}
 }
