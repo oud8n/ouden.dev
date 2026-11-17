@@ -13,7 +13,6 @@ import {
 	useAsciiBackground,
 	useBannerParallax,
 	useCursorDot,
-	useDraggableFloat,
 	useMagnetic,
 	useMusicPlayer,
 	useRevealAll,
@@ -33,7 +32,6 @@ export default function App() {
 	const { audioRef, isPlaying, toggle } = useMusicPlayer()
 	const asciiCanvasRef = useRef<HTMLCanvasElement>(null)
 	const bannerRef = useRef<HTMLDivElement>(null)
-	const vinylWrapRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
 		document.documentElement.classList.toggle('dark-theme', isDark)
@@ -52,7 +50,6 @@ export default function App() {
 	useMagnetic()
 	useAsciiBackground(asciiCanvasRef, isDark)
 	useBannerParallax(bannerRef)
-	useDraggableFloat(vinylWrapRef)
 
 	const handleScroll = (id: string) => {
 		document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
@@ -83,6 +80,13 @@ export default function App() {
 				isMenuOpen={isMenuOpen}
 				onToggleMenu={() => setIsMenuOpen(prev => !prev)}
 				onNavClick={handleNavClick}
+				player={
+					<VinylPlayer
+						audioRef={audioRef}
+						isPlaying={isPlaying}
+						onToggle={toggle}
+					/>
+				}
 			/>
 
 			<main className={isMenuOpen ? 'is-blurred' : ''}>
@@ -99,13 +103,6 @@ export default function App() {
 			</main>
 
 			<Footer />
-
-			<VinylPlayer
-				wrapRef={vinylWrapRef}
-				audioRef={audioRef}
-				isPlaying={isPlaying}
-				onToggle={toggle}
-			/>
 		</>
 	)
 }

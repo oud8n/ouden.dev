@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import type { CSSProperties, ReactNode } from 'react'
 import { NAV_ITEMS } from '../data/content'
 import { MoonIcon, SunIcon } from './icons'
 
@@ -8,6 +8,7 @@ type HeaderProps = {
 	isMenuOpen: boolean
 	onToggleMenu: () => void
 	onNavClick: (e: React.MouseEvent<HTMLElement>, id: string) => void
+	player: ReactNode
 }
 
 export function Header({
@@ -16,6 +17,7 @@ export function Header({
 	isMenuOpen,
 	onToggleMenu,
 	onNavClick,
+	player,
 }: HeaderProps) {
 	return (
 		<header className='header'>
@@ -43,6 +45,8 @@ export function Header({
 				</nav>
 
 				<div className='header-actions'>
+					{player}
+
 					<button
 						onClick={onToggleTheme}
 						aria-label={
