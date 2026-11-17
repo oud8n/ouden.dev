@@ -3,21 +3,19 @@ import type { useMusicPlayer } from '../hooks'
 import { AvatarRecord } from './AvatarRecord'
 
 type HeroProps = {
-	bannerRef: RefObject<HTMLDivElement | null>
 	asciiCanvasRef: RefObject<HTMLCanvasElement | null>
 	onScrollTo: (id: string) => void
 	music: ReturnType<typeof useMusicPlayer>
 }
 
 export function Hero({
-	bannerRef,
 	asciiCanvasRef,
 	onScrollTo,
 	music,
 }: HeroProps) {
 	return (
 		<section id='hero-top' className='hero-section'>
-			<div className='profile-banner' ref={bannerRef}>
+			<div className='profile-banner'>
 				<canvas ref={asciiCanvasRef} className='ascii-canvas banner-canvas' />
 			</div>
 
