@@ -8,8 +8,8 @@ export function useMagnetic() {
 			const el = (e.target as HTMLElement | null)?.closest?.<HTMLElement>('.magnetic')
 			if (!el) return
 			const rect = el.getBoundingClientRect()
-			const x = (e.clientX - rect.left - rect.width / 2) * 0.3
-			const y = (e.clientY - rect.top - rect.height / 2) * 0.3
+			const x = (e.clientX - rect.left - rect.width / 2) * 0.15
+			const y = (e.clientY - rect.top - rect.height / 2) * 0.15
 			el.style.transform = `translate3d(${x}px,${y}px,0)`
 		}
 
