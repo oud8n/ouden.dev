@@ -4,7 +4,7 @@ import { ArrowIcon } from './icons'
 
 export function Projects() {
 	return (
-		<section id='projects' className='section section-wide'>
+		<section id='projects' className='section'>
 			<div className='reveal'>
 				<div className='section-content'>
 					<div className='section-label'>$ ls ~/projects</div>
