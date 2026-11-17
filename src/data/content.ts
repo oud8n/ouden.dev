@@ -58,11 +58,11 @@ export const STACK_CHAPTERS = [
 	},
 ]
 
-export const ABOUT_PRINCIPLES = [
-	{ n: '01', text: 'Understand the code you write' },
-	{ n: '02', text: 'Test before you ship' },
-	{ n: '03', text: 'Performance matters' },
-	{ n: '04', text: 'Read the docs first' },
+export const ABOUT_FACTS = [
+	{ key: 'role', value: 'fullstack developer' },
+	{ key: 'base', value: 'Netherlands · remote' },
+	{ key: 'stack', value: 'Go, TypeScript, React' },
+	{ key: 'now', value: 'Flip Flow at Task Force · физика.ai · chronly' },
 ]
 
 export const EXPERIENCE_ITEMS = [

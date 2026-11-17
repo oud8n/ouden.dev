@@ -1,12 +1,5 @@
+import { ABOUT_FACTS } from '../data/content'
 import { AsciiDonut } from './AsciiDonut'
-import { ABOUT_PRINCIPLES } from '../data/content'
-
-const WHOAMI_ROWS = [
-	{ key: 'mode', value: 'backend-focused full-stack', accent: true },
-	{ key: 'focus', value: 'system design, performance', accent: false },
-	{ key: 'stack', value: 'Go, TypeScript, React', accent: false },
-	{ key: 'infra', value: 'Linux, Docker, PostgreSQL', accent: false },
-]
 
 export function About() {
 	return (
@@ -14,79 +7,37 @@ export function About() {
 			<div>
 				<div className='section-content'>
 					<h2 className='section-title'>
-						Mostly <span className='highlight'>backend.</span>
+						The <span className='highlight'>autonomous</span> one.
 					</h2>
 
 					<div className='about-grid'>
-						<div
-							className='about-lead'
-						>
-							<p className='about-quote'>
-								"Code you understand beats code that looks clever."
+						<div className='about-lead'>
+							<p className='section-text'>
+								At work my colleagues call me "the autonomous one". I go for the
+								tasks where it isn't clear at first how to build them: read the
+								code, try things, come back with something that works.
 							</p>
 							<p className='section-text'>
-								Most of my time goes into backend: APIs, databases, and keeping
-								services stable under load. Go and Node on the server, React
-								when there's a UI to build, Docker to ship it.
+								At Task Force I write whatever the project needs, which right
+								now is NestJS and TypeScript on the backend and React on the
+								front. For my own backends I reach for Go.
 							</p>
 							<p className='section-text'>
-								I learn from documentation and source code, and I break my own
-								projects on purpose to see what fails first.
+								Outside of client work I build my own products: a physics exam
+								prep platform and a time tracker for my Linux setup.
 							</p>
 						</div>
 
-						<div
-							className='whoami-card terminal-window'
-						>
-							<div className='terminal-titlebar'>
-								<span className='terminal-dot terminal-dot-red' />
-								<span className='terminal-dot terminal-dot-yellow' />
-								<span className='terminal-dot terminal-dot-green' />
-								<span className='terminal-titlebar-name'>ouden@dev</span>
-							</div>
-
-							<div className='whoami-content'>
-								<div className='whoami-cmd'>
-									<span className='whoami-prompt'>ouden@dev:~$</span> fastfetch
-								</div>
-								<div className='whoami-body'>
-									<AsciiDonut />
-									<div className='whoami-info'>
-										{WHOAMI_ROWS.map(row => (
-											<div className='whoami-row' key={row.key}>
-												<span className='whoami-key'>{row.key}</span>
-												<span
-													className={
-														row.accent
-															? 'whoami-value whoami-value-accent'
-															: 'whoami-value'
-													}
-												>
-													{row.value}
-												</span>
-											</div>
-										))}
+						<div className='facts-card'>
+							<AsciiDonut />
+							<dl className='facts-list'>
+								{ABOUT_FACTS.map(fact => (
+									<div className='facts-row' key={fact.key}>
+										<dt className='facts-key'>{fact.key}</dt>
+										<dd className='facts-value'>{fact.value}</dd>
 									</div>
-								</div>
-
-								<div className='whoami-cmd'>
-									<span className='whoami-prompt'>ouden@dev:~$</span> cat
-									principles.md
-								</div>
-								<div className='whoami-principles'>
-									{ABOUT_PRINCIPLES.map(p => (
-										<div className='whoami-principle' key={p.n}>
-											<span className='whoami-principle-n'>{p.n} ›</span>
-											<span className='whoami-principle-text'>{p.text}</span>
-										</div>
-									))}
-								</div>
-
-								<div className='whoami-cmd'>
-									<span className='whoami-prompt'>ouden@dev:~$</span>
-									<span className='whoami-cursor' />
-								</div>
-							</div>
+								))}
+							</dl>
 						</div>
 					</div>
 				</div>
