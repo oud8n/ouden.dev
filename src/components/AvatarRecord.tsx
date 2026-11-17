@@ -1,4 +1,5 @@
-import type { RefObject } from 'react'
+import { useRef, type RefObject } from 'react'
+import { useRecordSpin } from '../hooks'
 import { PauseIcon, PlayIcon } from './icons'
 
 const TRACK_FILE = 'Hugo TSR - Fenêtre Sur Rue.mp3'
@@ -17,6 +18,8 @@ export function AvatarRecord({
 }: AvatarRecordProps) {
 	const label = isPlaying ? `Pause: ${TRACK_TITLE}` : `Play: ${TRACK_TITLE}`
 	const playingClass = isPlaying ? 'is-playing' : ''
+	const avatarRef = useRef<HTMLImageElement>(null)
+	useRecordSpin(avatarRef, isPlaying)
 
 	return (
 		<div className='avatar-record'>
@@ -34,6 +37,7 @@ export function AvatarRecord({
 				aria-pressed={isPlaying}
 			>
 				<img
+					ref={avatarRef}
 					src={`${import.meta.env.BASE_URL}avatar.gif`}
 					alt='Skipy'
 					className='profile-avatar'
@@ -51,6 +55,7 @@ export function AvatarRecord({
 				aria-hidden='true'
 			>
 				<span className='now-playing-note'>♪</span>
+				<span className='now-playing-hint'>tap to play song</span>
 				<span className='now-playing-title'>{TRACK_TITLE}</span>
 				<span className='now-playing-bars'>
 					<span />
