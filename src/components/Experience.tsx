@@ -3,7 +3,7 @@ import { EXPERIENCE_ITEMS } from '../data/content'
 export function Experience() {
 	return (
 		<section id='experience' className='section'>
-			<div className='reveal'>
+			<div>
 				<div className='section-content'>
 					<h2 className='section-title'>Learning by shipping.</h2>
 

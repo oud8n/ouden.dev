@@ -45,7 +45,7 @@ function ProjectBody({ project, index }: { project: Project; index: number }) {
 export function Projects() {
 	return (
 		<section id='projects' className='section'>
-			<div className='reveal'>
+			<div>
 				<div className='section-content'>
 					<h2 className='section-title'>
 						Things I've <span className='highlight'>built.</span>
