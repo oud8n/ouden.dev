@@ -1,49 +1,39 @@
 import type { RefObject } from 'react'
 import { PauseIcon, PlayIcon } from './icons'
 
+const TRACK_FILE = 'Hugo TSR - Fenêtre Sur Rue.mp3'
+const TRACK_TITLE = 'Hugo TSR — Fenêtre Sur Rue'
+
 type VinylPlayerProps = {
-	wrapRef: RefObject<HTMLDivElement | null>
 	audioRef: RefObject<HTMLAudioElement | null>
 	isPlaying: boolean
 	onToggle: () => void
 }
 
-export function VinylPlayer({
-	wrapRef,
-	audioRef,
-	isPlaying,
-	onToggle,
-}: VinylPlayerProps) {
+export function VinylPlayer({ audioRef, isPlaying, onToggle }: VinylPlayerProps) {
+	const label = isPlaying ? `Pause: ${TRACK_TITLE}` : `Play: ${TRACK_TITLE}`
+
 	return (
-		<div className='vinyl-wrap' ref={wrapRef}>
+		<>
 			<audio
 				ref={audioRef}
-				src={`${import.meta.env.BASE_URL}Hugo TSR - Fenêtre Sur Rue.mp3`}
+				src={`${import.meta.env.BASE_URL}${TRACK_FILE}`}
 				loop
-				onError={() => {}}
+				preload='none'
 			/>
 			<button
-				className={`vinyl-disc ${isPlaying ? 'is-playing' : ''}`}
+				className={`vinyl-btn ${isPlaying ? 'is-playing' : ''}`}
 				onClick={onToggle}
-				aria-label={isPlaying ? 'Pause' : 'Play'}
+				aria-label={label}
+				aria-pressed={isPlaying}
+				title={label}
 			>
-				<span className='vinyl-label'>
-					{isPlaying ? <PauseIcon /> : <PlayIcon />}
+				<span className='vinyl-disc'>
+					<span className='vinyl-label'>
+						{isPlaying ? <PauseIcon /> : <PlayIcon />}
+					</span>
 				</span>
 			</button>
-			<div className='vinyl-meta'>
-				<strong>now spinning</strong>
-				{isPlaying ? (
-					<span className='vinyl-bars'>
-						<span />
-						<span />
-						<span />
-						<span />
-					</span>
-				) : (
-					<span>tap the record</span>
-				)}
-			</div>
-		</div>
+		</>
 	)
 }
