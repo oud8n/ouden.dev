@@ -109,6 +109,7 @@ export type Project = {
 	tags: string[]
 	url?: string
 	image?: string
+	asciiLogo?: { text: string; accent: string }
 	status?: string
 }
 
@@ -129,6 +130,7 @@ export const PROJECTS: Project[] = [
 	},
 	{
 		name: 'this site',
+		asciiLogo: { text: 'oud8n', accent: '8' },
 		url: 'https://github.com/skipydev/skipy.dev',
 		desc: 'The marquee, the ASCII banner and the donut are hand-written, no UI libraries. Open source.',
 		tags: ['React', 'TypeScript', 'Vite'],
