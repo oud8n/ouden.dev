@@ -16,11 +16,23 @@ export function Experience() {
 								<div className='timeline-body'>
 									<div className='timeline-head'>
 										<h3 className='timeline-title'>{item.title}</h3>
-										{item.tags.map(tag => (
-											<span key={tag} className='chip'>
-												{tag}
-											</span>
-										))}
+										{item.tags.map(tag =>
+											tag.url ? (
+												<a
+													key={tag.label}
+													href={tag.url}
+													target='_blank'
+													rel='noopener noreferrer'
+													className='chip chip-link'
+												>
+													{tag.label} ↗
+												</a>
+											) : (
+												<span key={tag.label} className='chip'>
+													{tag.label}
+												</span>
+											),
+										)}
 									</div>
 									<p className='timeline-desc'>{item.desc}</p>
 								</div>
