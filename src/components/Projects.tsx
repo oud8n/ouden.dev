@@ -51,8 +51,7 @@ export function Projects() {
 						Things I've <span className='highlight'>built.</span>
 					</h2>
 					<p className='section-description'>
-						Most of my GitHub is learning repos: small projects I wrote to
-						figure out how something works. These are the ones worth opening.
+						My own products and this site.
 					</p>
 
 					<div className='project-list'>
