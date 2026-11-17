@@ -1,4 +1,3 @@
-import type { CSSProperties } from 'react'
 import { NAV_ITEMS } from '../data/content'
 import { MoonIcon, SunIcon } from './icons'
 
@@ -71,13 +70,12 @@ export function Header({
 				className={`mobile-nav mobile-nav-trigger ${isMenuOpen ? 'is-open' : ''}`}
 			>
 				<div className='mobile-nav-list'>
-					{NAV_ITEMS.map((item, i) => (
+					{NAV_ITEMS.map(item => (
 						<a
 							key={item.id}
 							href={`#${item.id}`}
 							onClick={e => onNavClick(e, item.id)}
 							className='mobile-nav-item'
-							style={{ ['--r-delay']: `${0.45 + i * 0.06}s` } as CSSProperties}
 						>
 							<span className='mobile-nav-num'>{item.num}</span>
 							<span className='mobile-nav-label'>{item.label}</span>
@@ -86,14 +84,7 @@ export function Header({
 					))}
 				</div>
 
-				<div
-					className='mobile-nav-footer'
-					style={
-						{
-							['--r-delay']: `${0.45 + NAV_ITEMS.length * 0.06}s`,
-						} as CSSProperties
-					}
-				>
+				<div className='mobile-nav-footer'>
 					<span>built with React, Vite &amp; TS</span>
 				</div>
 			</nav>
