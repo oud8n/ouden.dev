@@ -11,7 +11,6 @@ export function AsciiLogo({ text, accent }: { text: string; accent: string }) {
 			className='ascii-logo-canvas'
 			aria-label={`${text} in rotating ASCII`}
 			role='img'
-			onClick={e => e.preventDefault()}
 		/>
 	)
 }

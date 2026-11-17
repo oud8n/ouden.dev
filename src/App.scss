@@ -1428,6 +1428,27 @@ a.project:hover {
 	}
 }
 
+.project-title-link {
+	display: inline-flex;
+	align-items: center;
+	gap: 14px;
+
+	.project-arrow {
+		margin-left: 0;
+	}
+
+	&:hover {
+		.project-name,
+		.project-arrow {
+			color: var(--red);
+		}
+
+		.project-arrow {
+			transform: translate(2px, -2px);
+		}
+	}
+}
+
 .project-all {
 	display: inline-flex;
 	align-items: center;

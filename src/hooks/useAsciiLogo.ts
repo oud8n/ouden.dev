@@ -104,7 +104,6 @@ export function useAsciiLogo(
 		let rows = 0
 		let raf = 0
 		let visible = false
-		let time = 0
 
 		let yaw = 0
 		let pitch = 0.15
@@ -145,8 +144,8 @@ export function useAsciiLogo(
 				const lum = new Float32Array(size)
 				const accent = new Uint8Array(size)
 
-				const angleY = yaw + (reduceMotion ? 0 : Math.sin(time) * 0.55)
-				const angleX = pitch + (reduceMotion ? 0 : Math.sin(time * 0.7) * 0.08)
+				const angleY = yaw
+				const angleX = pitch
 				const cy = Math.cos(angleY)
 				const sy = Math.sin(angleY)
 				const cx = Math.cos(angleX)
@@ -201,7 +200,7 @@ export function useAsciiLogo(
 				}
 			}
 
-			if (!dragging) time += 0.012
+			if (!dragging && !reduceMotion) yaw += 0.006
 			raf = requestAnimationFrame(draw)
 		}
 
