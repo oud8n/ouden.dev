@@ -49,9 +49,7 @@ export function Hero({
 
 							<p className='hero-subtitle'>
 								Fullstack developer based in the Netherlands, working remotely.
-								I build products at Task Force and ship my own on the side. Go
-								for my backends, TypeScript and React for everything that runs
-								in a browser.
+								I build products at Task Force and ship my own on the side.
 							</p>
 
 							<div className='hero-buttons'>
