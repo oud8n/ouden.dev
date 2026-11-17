@@ -3,7 +3,7 @@ import { EXPERIENCE_ITEMS } from '../data/content'
 
 export function Experience() {
 	return (
-		<section id='experience' className='section section-wide'>
+		<section id='experience' className='section'>
 			<div className='reveal'>
 				<div className='section-content'>
 					<div className='section-label'>$ cat timeline.log</div>
@@ -27,8 +27,14 @@ export function Experience() {
 									<div className='log-entry-head'>
 										<span className='log-year'>[{item.year}]</span>
 										<span className='log-title'>{item.title}</span>
-										{item.tags[0] && (
-											<span className='log-tag'>{item.tags[0]}</span>
+										{item.tags.length > 0 && (
+											<span className='log-tags'>
+												{item.tags.map(tag => (
+													<span key={tag} className='log-tag'>
+														{tag}
+													</span>
+												))}
+											</span>
 										)}
 									</div>
 									<p className='log-desc'>{item.desc}</p>

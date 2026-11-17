@@ -8,7 +8,7 @@ type ContactProps = {
 
 export function Contact({ onScrollTo }: ContactProps) {
 	return (
-		<section id='contact' className='section section-wide contact-section'>
+		<section id='contact' className='section contact-section'>
 			<div className='reveal'>
 				<div className='section-content'>
 					<div className='section-label'>$ contact --open</div>
