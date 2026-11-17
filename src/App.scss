@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@1,500&family=Inter:wght@700;800&family=JetBrains+Mono:wght@400;500;700&display=swap');
 
+$ease-soft: cubic-bezier(0.25, 0.8, 0.25, 1);
+
 :root {
 	--bg-rgb: 247 242 232;
 	--ink-rgb: 10 10 10;
@@ -41,8 +43,8 @@ html,
 body {
 	background: var(--bg);
 	transition:
-		background 0.3s ease,
-		color 0.3s ease;
+		background 0.4s $ease-soft,
+		color 0.4s $ease-soft;
 }
 
 body {
@@ -91,19 +93,19 @@ button {
 	border: 1.5px solid var(--ink);
 	cursor: pointer;
 	transition:
-		transform 0.2s ease,
-		background 0.2s ease,
-		color 0.2s ease,
-		border-color 0.2s ease,
-		box-shadow 0.2s ease;
+		transform 0.4s $ease-soft,
+		background 0.4s $ease-soft,
+		color 0.4s $ease-soft,
+		border-color 0.4s $ease-soft,
+		box-shadow 0.4s $ease-soft;
 
 	&-fill {
 		background: var(--ink);
 		color: var(--bg);
 
 		&:hover {
-			transform: translateY(-3px);
-			box-shadow: 0 6px 20px rgb(var(--ink-rgb) / 0.2);
+			transform: translateY(-2px);
+			box-shadow: 0 4px 14px rgb(var(--ink-rgb) / 0.12);
 		}
 	}
 
@@ -114,13 +116,13 @@ button {
 		&:hover {
 			border-color: var(--red);
 			color: var(--red);
-			transform: translateY(-3px);
+			transform: translateY(-2px);
 		}
 	}
 }
 
 .magnetic {
-	transition: transform 0.15s ease-out;
+	transition: transform 0.5s $ease-soft;
 }
 
 .reveal {
@@ -223,7 +225,7 @@ button {
 	padding: 7px;
 	box-shadow: 0 0 0 3px var(--red);
 	cursor: pointer;
-	transition: box-shadow 0.3s ease;
+	transition: box-shadow 0.4s $ease-soft;
 
 	&:focus-visible {
 		outline: 2px solid var(--red);
@@ -310,8 +312,8 @@ button {
 	opacity: 0;
 	transform: translate(-50%, -50%) scale(0.85);
 	transition:
-		opacity 0.25s ease,
-		transform 0.25s ease;
+		opacity 0.4s $ease-soft,
+		transform 0.4s $ease-soft;
 
 	svg {
 		width: 34%;
@@ -333,7 +335,7 @@ button {
 	font-size: 13px;
 	color: var(--muted-2);
 	cursor: pointer;
-	transition: color 0.3s ease;
+	transition: color 0.4s $ease-soft;
 
 	&:hover,
 	&.is-playing {
@@ -492,7 +494,7 @@ button {
 	border: none;
 	cursor: pointer;
 	color: var(--muted-2);
-	transition: color 0.3s ease;
+	transition: color 0.4s $ease-soft;
 
 	&:hover {
 		color: var(--red);
@@ -599,7 +601,7 @@ button {
 	display: inline-block;
 	transition:
 		transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
-		color 0.3s ease;
+		color 0.4s $ease-soft;
 
 	&::after {
 		content: attr(data-text);
@@ -640,8 +642,8 @@ button {
 	cursor: pointer;
 	overflow: visible;
 	transition:
-		border-color 0.2s ease,
-		color 0.2s ease;
+		border-color 0.4s $ease-soft,
+		color 0.4s $ease-soft;
 
 	svg {
 		width: 17px;
@@ -674,8 +676,8 @@ button {
 	padding: 0;
 	cursor: pointer;
 	transition:
-		background-color 0.25s ease,
-		border-color 0.25s ease;
+		background-color 0.4s $ease-soft,
+		border-color 0.4s $ease-soft;
 
 	&.is-open {
 		background: var(--red);
@@ -712,9 +714,9 @@ button {
 	height: 1px;
 	background-color: var(--ink);
 	transition:
-		transform 0.3s ease,
-		opacity 0.3s ease,
-		background-color 0.3s ease;
+		transform 0.4s $ease-soft,
+		opacity 0.4s $ease-soft,
+		background-color 0.4s $ease-soft;
 }
 
 .mobile-nav {
@@ -775,7 +777,7 @@ button {
 	&:hover {
 		.mobile-nav-label {
 			color: var(--red);
-			transform: translateX(6px);
+			transform: translateX(4px);
 		}
 		.mobile-nav-arrow {
 			color: var(--red);
@@ -798,8 +800,8 @@ button {
 	text-transform: lowercase;
 	letter-spacing: -0.02em;
 	transition:
-		color 0.3s ease,
-		transform 0.3s ease;
+		color 0.4s $ease-soft,
+		transform 0.4s $ease-soft;
 }
 
 .mobile-nav-arrow {
@@ -807,8 +809,8 @@ button {
 	font-size: 20px;
 	color: var(--muted-2);
 	transition:
-		color 0.3s ease,
-		transform 0.3s ease;
+		color 0.4s $ease-soft,
+		transform 0.4s $ease-soft;
 }
 
 .mobile-nav-footer {
@@ -1119,15 +1121,15 @@ main {
 	padding: 12px 0;
 	border-bottom: 1px solid var(--border);
 	transition:
-		padding-left 0.3s ease,
-		border-color 0.3s ease;
+		padding-left 0.4s $ease-soft,
+		border-color 0.4s $ease-soft;
 
 	&:last-child {
 		border-bottom: none;
 	}
 
 	&:hover {
-		padding-left: 8px;
+		padding-left: 4px;
 		border-color: var(--red);
 		.whoami-principle-n {
 			color: var(--red);
@@ -1140,7 +1142,7 @@ main {
 	font-size: 13px;
 	color: var(--muted-2);
 	flex-shrink: 0;
-	transition: color 0.3s ease;
+	transition: color 0.4s $ease-soft;
 }
 
 .whoami-principle-text {
@@ -1186,7 +1188,7 @@ main {
 	mask-repeat: no-repeat;
 	-webkit-mask-position: center;
 	mask-position: center;
-	transition: background-color 0.25s ease;
+	transition: background-color 0.4s $ease-soft;
 }
 
 .stack-chapters {
@@ -1320,7 +1322,7 @@ main {
 	height: 28px;
 	flex-shrink: 0;
 	background-color: var(--muted-2);
-	transition: background-color 0.15s ease;
+	transition: background-color 0.4s $ease-soft;
 }
 
 .tool-chip-name {
@@ -1328,7 +1330,7 @@ main {
 	font-weight: 700;
 	font-size: clamp(20px, 2.4vw, 28px);
 	color: var(--muted-2);
-	transition: color 0.15s ease;
+	transition: color 0.4s $ease-soft;
 }
 
 .tool-chip:hover {
@@ -1394,7 +1396,7 @@ main {
 	font-size: 13px;
 	color: var(--muted-2);
 	padding-top: 6px;
-	transition: color 0.3s ease;
+	transition: color 0.4s $ease-soft;
 }
 
 .timeline-head {
@@ -1454,7 +1456,7 @@ main {
 	font-weight: 800;
 	font-size: clamp(28px, 4vw, 44px);
 	letter-spacing: -0.02em;
-	transition: color 0.3s ease;
+	transition: color 0.4s $ease-soft;
 }
 
 .project-status {
@@ -1475,8 +1477,8 @@ main {
 	height: 20px;
 	color: var(--muted-2);
 	transition:
-		transform 0.3s ease,
-		color 0.3s ease;
+		transform 0.4s $ease-soft,
+		color 0.4s $ease-soft;
 
 	svg {
 		width: 100%;
@@ -1511,8 +1513,8 @@ main {
 		object-fit: cover;
 		object-position: top;
 		transition:
-			filter 0.4s ease,
-			transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+			filter 0.7s $ease-soft,
+			transform 0.9s $ease-soft;
 
 		@media (hover: hover) {
 			filter: grayscale(1) contrast(1.05);
@@ -1523,7 +1525,7 @@ main {
 .project:hover {
 	.project-shot img {
 		filter: none;
-		transform: scale(1.02);
+		transform: scale(1.01);
 	}
 }
 
@@ -1534,7 +1536,7 @@ a.project:hover {
 	}
 
 	.project-arrow {
-		transform: translate(3px, -3px);
+		transform: translate(2px, -2px);
 	}
 }
 
@@ -1545,19 +1547,19 @@ a.project:hover {
 	margin-top: 28px;
 	font-size: 13.5px;
 	color: var(--muted-2);
-	transition: color 0.3s ease;
+	transition: color 0.4s $ease-soft;
 
 	svg {
 		width: 14px;
 		height: 14px;
-		transition: transform 0.3s ease;
+		transition: transform 0.4s $ease-soft;
 	}
 
 	&:hover {
 		color: var(--red);
 
 		svg {
-			transform: translate(3px, -3px);
+			transform: translate(2px, -2px);
 		}
 	}
 }
@@ -1617,19 +1619,19 @@ a.project:hover {
 	border-bottom: 1px solid var(--border);
 	transition:
 		padding-left 0.35s ease,
-		border-color 0.3s ease;
+		border-color 0.4s $ease-soft;
 
 	@media (min-width: 640px) {
 		grid-template-columns: 48px 1fr 240px 24px;
 	}
 
 	&:hover {
-		padding-left: 16px;
+		padding-left: 6px;
 		border-color: var(--red);
 
 		.contact-row-icon {
 			color: var(--red);
-			transform: scale(1.1);
+			transform: scale(1.05);
 		}
 		.contact-row-name,
 		.contact-row-handle {
@@ -1637,7 +1639,7 @@ a.project:hover {
 		}
 		.contact-row-arrow {
 			color: var(--red);
-			transform: translate(4px, -4px);
+			transform: translate(2px, -2px);
 		}
 	}
 }
@@ -1664,8 +1666,8 @@ a.project:hover {
 	justify-content: center;
 	color: var(--muted);
 	transition:
-		color 0.3s ease,
-		transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+		color 0.4s $ease-soft,
+		transform 0.4s $ease-soft;
 
 	svg {
 		width: 100%;
@@ -1686,7 +1688,7 @@ a.project:hover {
 	font-weight: 800;
 	font-size: clamp(20px, 3vw, 30px);
 	letter-spacing: -0.01em;
-	transition: color 0.3s ease;
+	transition: color 0.4s $ease-soft;
 }
 
 .contact-row-sub {
@@ -1699,7 +1701,7 @@ a.project:hover {
 	color: var(--muted);
 	white-space: nowrap;
 	text-align: right;
-	transition: color 0.3s ease;
+	transition: color 0.4s $ease-soft;
 }
 
 .contact-row-arrow {
@@ -1707,8 +1709,8 @@ a.project:hover {
 	height: 18px;
 	color: var(--muted-2);
 	transition:
-		transform 0.3s ease,
-		color 0.3s ease;
+		transform 0.4s $ease-soft,
+		color 0.4s $ease-soft;
 	display: none;
 
 	svg {
@@ -1762,25 +1764,25 @@ a.project:hover {
 	padding: 12px 24px;
 	border-radius: 0;
 	transition:
-		border-color 0.3s ease,
-		color 0.3s ease,
-		transform 0.3s ease;
+		border-color 0.4s $ease-soft,
+		color 0.4s $ease-soft,
+		transform 0.4s $ease-soft;
 	white-space: nowrap;
 
 	&:hover {
 		border-color: var(--red);
 		color: var(--red);
-		transform: translateY(-3px);
+		transform: translateY(-2px);
 
 		.contact-back-top-arrow {
-			transform: translateY(-3px);
+			transform: translateY(-2px);
 		}
 	}
 }
 
 .contact-back-top-arrow {
 	font-size: 16px;
-	transition: transform 0.3s ease;
+	transition: transform 0.4s $ease-soft;
 }
 
 .footer {
@@ -1827,8 +1829,8 @@ a.project:hover {
 	height: 20px;
 	color: var(--muted);
 	transition:
-		color 0.3s ease,
-		transform 0.2s ease;
+		color 0.4s $ease-soft,
+		transform 0.4s $ease-soft;
 
 	svg {
 		width: 100%;
@@ -1837,6 +1839,6 @@ a.project:hover {
 
 	&:hover {
 		color: var(--red);
-		transform: translateY(-3px);
+		transform: translateY(-2px);
 	}
 }
