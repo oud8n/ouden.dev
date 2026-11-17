@@ -39,7 +39,7 @@ export function AvatarRecord({
 				<img
 					ref={avatarRef}
 					src={`${import.meta.env.BASE_URL}avatar.gif`}
-					alt='Skipy'
+					alt='Ouden'
 					className='profile-avatar'
 				/>
 				<span className='avatar-grooves' aria-hidden='true' />

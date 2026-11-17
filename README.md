@@ -1,4 +1,4 @@
-# { skipy.dev }
+# { ouden }
 
 My personal portfolio site — built with React, TypeScript, Vite and SCSS.
 Live at [skipydev.github.io/skipy.dev](https://skipydev.github.io/skipy.dev/).

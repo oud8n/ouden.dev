@@ -21,9 +21,9 @@ export function Header({
 			<div className='header-inner'>
 				<a href='#' onClick={e => onNavClick(e, 'hero-top')} className='logo'>
 					<span className='logo-bracket'>{'{'}</span>
-					<span className='logo-text'>skipy.dev</span>
+					<span className='logo-text'>ouden</span>
 					<span className='logo-bracket'>{'}'}</span>
-					<span className='logo-sub'>| fullstack engineer</span>
+					<span className='logo-sub'>| fullstack developer</span>
 				</a>
 
 				<nav className='desktop-nav'>

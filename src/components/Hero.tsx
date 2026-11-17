@@ -31,7 +31,7 @@ export function Hero({
 						<div className='profile-info-wrap'>
 							<div className='profile-meta'>
 								<h1 className='hero-title'>
-									Skipy
+									Ouden
 									<svg
 										className='verified-badge'
 										viewBox='0 0 24 24'
@@ -42,7 +42,7 @@ export function Hero({
 									</svg>
 								</h1>
 								<span className='profile-handle'>
-									@skipydev · fullstack engineer
+									@oud8n · fullstack developer
 								</span>
 								<p className='about-quote hero-quote'>
 									"Making stuff that doesn't break"

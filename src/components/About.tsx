@@ -42,12 +42,12 @@ export function About() {
 								<span className='terminal-dot terminal-dot-red' />
 								<span className='terminal-dot terminal-dot-yellow' />
 								<span className='terminal-dot terminal-dot-green' />
-								<span className='terminal-titlebar-name'>skipy@dev</span>
+								<span className='terminal-titlebar-name'>ouden@dev</span>
 							</div>
 
 							<div className='whoami-content'>
 								<div className='whoami-cmd'>
-									<span className='whoami-prompt'>skipy@dev:~$</span> fastfetch
+									<span className='whoami-prompt'>ouden@dev:~$</span> fastfetch
 								</div>
 								<div className='whoami-body'>
 									<AsciiDonut />
@@ -70,7 +70,7 @@ export function About() {
 								</div>
 
 								<div className='whoami-cmd'>
-									<span className='whoami-prompt'>skipy@dev:~$</span> cat
+									<span className='whoami-prompt'>ouden@dev:~$</span> cat
 									principles.md
 								</div>
 								<div className='whoami-principles'>
@@ -83,7 +83,7 @@ export function About() {
 								</div>
 
 								<div className='whoami-cmd'>
-									<span className='whoami-prompt'>skipy@dev:~$</span>
+									<span className='whoami-prompt'>ouden@dev:~$</span>
 									<span className='whoami-cursor' />
 								</div>
 							</div>

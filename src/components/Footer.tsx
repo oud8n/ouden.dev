@@ -7,7 +7,7 @@ export function Footer() {
 		<footer className='footer'>
 			<div className='footer-inner'>
 				<span className='footer-text'>
-					© 2026 skipy.dev — built with React, Vite &amp; SCSS
+					© 2026 ouden — built with React, Vite &amp; SCSS
 				</span>
 
 				<div className='footer-links'>
