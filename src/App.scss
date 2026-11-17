@@ -1669,18 +1669,11 @@ main {
 .contact-closing {
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: flex-end;
 	flex-wrap: wrap;
 	gap: 24px;
 	padding-top: 48px;
 	border-top: 1px solid var(--border);
-}
-
-.contact-closing-text {
-	font-size: 15px;
-	color: var(--muted);
-	line-height: 1.8;
-	max-width: 540px;
 }
 
 .contact-back-top {
