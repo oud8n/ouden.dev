@@ -1,6 +1,46 @@
-import type { CSSProperties } from 'react'
-import { GITHUB_REPOS_URL, PROJECTS } from '../data/content'
+import { GITHUB_REPOS_URL, PROJECTS, type Project } from '../data/content'
 import { ArrowIcon } from './icons'
+
+function ProjectBody({ project, index }: { project: Project; index: number }) {
+	return (
+		<>
+			<div className='project-info'>
+				<div className='project-head'>
+					<span className='project-num'>
+						{String(index + 1).padStart(2, '0')}
+					</span>
+					<h3 className='project-name'>{project.name}</h3>
+					{project.status && (
+						<span className='project-status'>{project.status}</span>
+					)}
+					{project.url && (
+						<span className='project-arrow'>
+							<ArrowIcon />
+						</span>
+					)}
+				</div>
+				<p className='project-desc'>{project.desc}</p>
+				<div className='project-tags'>
+					{project.tags.map(tag => (
+						<span key={tag} className='chip'>
+							{tag}
+						</span>
+					))}
+				</div>
+			</div>
+
+			{project.image && (
+				<div className='project-shot'>
+					<img
+						src={`${import.meta.env.BASE_URL}${project.image}`}
+						alt={`${project.name} screenshot`}
+						loading='lazy'
+					/>
+				</div>
+			)}
+		</>
+	)
+}
 
 export function Projects() {
 	return (
@@ -12,56 +52,38 @@ export function Projects() {
 					</h2>
 					<p className='section-description'>
 						Most of my GitHub is learning repos: small projects I wrote to
-						figure out how something works. These two are the ones worth
-						opening.
+						figure out how something works. These are the ones worth opening.
 					</p>
 
-					<div className='terminal-window projects-window reveal'>
-						<div className='terminal-titlebar'>
-							<span className='terminal-dot terminal-dot-red' />
-							<span className='terminal-dot terminal-dot-yellow' />
-							<span className='terminal-dot terminal-dot-green' />
-							<span className='terminal-titlebar-name'>~/projects</span>
-						</div>
-
-						<div className='projects-window-content'>
-							{PROJECTS.map((proj, idx) => (
+					<div className='project-list'>
+						{PROJECTS.map((project, i) =>
+							project.url ? (
 								<a
-									key={proj.name}
-									href={proj.url}
+									key={project.name}
+									href={project.url}
 									target='_blank'
 									rel='noopener noreferrer'
-									className='project-row reveal'
-									style={{ ['--r-delay']: `${idx * 0.1}s` } as CSSProperties}
+									className='project'
 								>
-									<div className='project-row-head'>
-										<span className='project-row-name'>{proj.name}</span>
-										<span className='project-row-arrow'>
-											<ArrowIcon />
-										</span>
-									</div>
-									<p className='project-row-desc'>{proj.desc}</p>
-									<div className='project-row-tags'>
-										{proj.tags.map(tag => (
-											<span key={tag} className='project-row-tag'>
-												{tag}
-											</span>
-										))}
-									</div>
+									<ProjectBody project={project} index={i} />
 								</a>
-							))}
-
-							<a
-								href={GITHUB_REPOS_URL}
-								target='_blank'
-								rel='noopener noreferrer'
-								className='project-row-all'
-							>
-								<span>more on GitHub</span>
-								<ArrowIcon />
-							</a>
-						</div>
+							) : (
+								<div key={project.name} className='project'>
+									<ProjectBody project={project} index={i} />
+								</div>
+							),
+						)}
 					</div>
+
+					<a
+						href={GITHUB_REPOS_URL}
+						target='_blank'
+						rel='noopener noreferrer'
+						className='project-all'
+					>
+						<span>more on GitHub</span>
+						<ArrowIcon />
+					</a>
 				</div>
 			</div>
 		</section>
