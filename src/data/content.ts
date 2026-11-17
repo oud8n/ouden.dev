@@ -17,10 +17,10 @@ export const STACK_CHAPTERS = [
 		title: 'languages',
 		desc: 'What I write code in.',
 		tools: [
+			{ slug: 'go', name: 'Go' },
 			{ slug: 'typescript', name: 'TypeScript' },
 			{ slug: 'javascript', name: 'JavaScript' },
 			{ slug: 'python', name: 'Python' },
-			{ slug: 'go', name: 'Go' },
 		],
 	},
 	{
@@ -29,14 +29,16 @@ export const STACK_CHAPTERS = [
 		tools: [
 			{ slug: 'react', name: 'React' },
 			{ slug: 'nextdotjs', name: 'Next.js' },
+			{ slug: 'vuedotjs', name: 'Vue' },
+			{ slug: 'angular', name: 'Angular' },
 			{ slug: 'tailwindcss', name: 'Tailwind' },
-			{ slug: 'html5', name: 'HTML5' },
+			{ slug: 'sass', name: 'SCSS' },
 			{ slug: 'vite', name: 'Vite' },
 		],
 	},
 	{
 		title: 'backend & data',
-		desc: 'Architecture, APIs and data handling.',
+		desc: 'APIs, data and storage.',
 		tools: [
 			{ slug: 'nestjs', name: 'NestJS' },
 			{ slug: 'nodedotjs', name: 'Node.js' },
@@ -44,16 +46,27 @@ export const STACK_CHAPTERS = [
 			{ slug: 'prisma', name: 'Prisma' },
 			{ slug: 'redis', name: 'Redis' },
 			{ slug: 'mysql', name: 'MySQL' },
+			{ slug: 'sqlite', name: 'SQLite' },
 		],
 	},
 	{
-		title: 'infra & devops',
-		desc: 'Environment and deployment.',
+		title: 'desktop',
+		desc: 'Native apps with a web frontend.',
+		tools: [
+			{ slug: 'wails', name: 'Wails' },
+			{ slug: 'tauri', name: 'Tauri' },
+		],
+	},
+	{
+		title: 'tools',
+		desc: 'Environment, testing and API work.',
 		tools: [
 			{ slug: 'linux', name: 'Linux' },
 			{ slug: 'docker', name: 'Docker' },
 			{ slug: 'git', name: 'Git' },
-			{ slug: 'nginx', name: 'Nginx' },
+			{ slug: 'swagger', name: 'Swagger' },
+			{ slug: 'postman', name: 'Postman' },
+			{ slug: 'vitest', name: 'Vitest' },
 		],
 	},
 ]
