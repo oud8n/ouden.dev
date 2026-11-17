@@ -48,7 +48,7 @@ export function Hero({ bannerRef, asciiCanvasRef, onScrollTo }: HeroProps) {
 
 							<p className='hero-subtitle'>
 								I build web applications. Mostly backend, some frontend. I'm
-								17. backend intern working mostly with Go, TypeScript, and NestJS. Day to day, I deal with PostgreSQL, Docker, and APIs, and I actually enjoy figuring out how systems work under the hood.
+								19. backend intern working mostly with Go, TypeScript, and NestJS. Day to day, I deal with PostgreSQL, Docker, and APIs, and I actually enjoy figuring out how systems work under the hood.
 								I just like writing clean code and building stuff that actually works
 								P.s 
 								sometimes it's not
