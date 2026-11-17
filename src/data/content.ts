@@ -73,17 +73,27 @@ export const STACK_CHAPTERS = [
 
 export const ABOUT_FACTS = [
 	{ key: 'role', value: 'fullstack developer' },
-	{ key: 'base', value: 'Netherlands · remote' },
-	{ key: 'stack', value: 'Go, TypeScript, React' },
-	{ key: 'now', value: 'Flip Flow at Task Force · физика.ai · chronly' },
+	{ key: 'timezone', value: 'CET (Netherlands)' },
+	{ key: 'languages', value: 'English, Russian' },
+	{ key: 'open to', value: 'remote · full-time / contract' },
 ]
 
-export const EXPERIENCE_ITEMS = [
+export type ExperienceTag = { label: string; url?: string }
+
+export const EXPERIENCE_ITEMS: {
+	year: string
+	title: string
+	desc: string
+	tags: ExperienceTag[]
+}[] = [
 	{
 		year: 'Jul 2026 — now',
 		title: 'Fullstack developer',
 		desc: 'Full-cycle engineering team building products for clients. I work across the stack. On Flip Flow, a platform for US fix & flip real estate investments, I built backend features in NestJS and investor-facing pages in TypeScript and React.',
-		tags: ['Task Force'],
+		tags: [
+			{ label: 'Task Force', url: 'https://taskforce.now/' },
+			{ label: 'Flip Flow', url: 'https://flipflow.fund/' },
+		],
 	},
 	{
 		year: 'ongoing',

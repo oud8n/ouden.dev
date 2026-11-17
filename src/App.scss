@@ -995,7 +995,7 @@ main {
 
 .facts-row {
 	display: grid;
-	grid-template-columns: 64px minmax(0, 1fr);
+	grid-template-columns: 88px minmax(0, 1fr);
 	gap: 16px;
 	align-items: baseline;
 	padding: 12px 0;
@@ -1217,6 +1217,17 @@ main {
 	padding: 4px 10px;
 	border: 1px solid var(--border);
 	white-space: nowrap;
+}
+
+.chip-link {
+	transition:
+		color 0.4s $ease-soft,
+		border-color 0.4s $ease-soft;
+
+	&:hover {
+		color: var(--red);
+		border-color: var(--red);
+	}
 }
 
 .timeline {
