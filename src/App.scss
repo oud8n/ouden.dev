@@ -347,7 +347,6 @@ button {
 	gap: 22px;
 }
 
-// concentric record grooves over the photo while playing
 .avatar-grooves {
 	position: absolute;
 	inset: 7px;
@@ -386,7 +385,6 @@ button {
 		height: 34%;
 	}
 
-	// touch: nothing on top of the face, the floating hint below does the job
 	@media (hover: none) {
 		display: none;
 	}

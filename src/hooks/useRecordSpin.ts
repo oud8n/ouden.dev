@@ -11,8 +11,6 @@ function currentAngle(el: HTMLElement) {
 	return (deg + 360) % 360
 }
 
-// Spins the element while playing; on pause it winds back counter-clockwise
-// to 0°, like a rotary phone dial returning home.
 export function useRecordSpin(
 	ref: RefObject<HTMLElement | null>,
 	isPlaying: boolean,
