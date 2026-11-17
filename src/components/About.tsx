@@ -22,10 +22,6 @@ export function About() {
 								now is NestJS and TypeScript on the backend and React on the
 								front. For my own backends I reach for Go.
 							</p>
-							<p className='section-text'>
-								Outside of client work I build my own products: a physics exam
-								prep platform and a time tracker for my Linux setup.
-							</p>
 						</div>
 
 						<div className='facts-card'>
