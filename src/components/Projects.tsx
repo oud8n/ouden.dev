@@ -10,11 +10,25 @@ function ProjectBody({ project, index }: { project: Project; index: number }) {
 					<span className='project-num'>
 						{String(index + 1).padStart(2, '0')}
 					</span>
-					<h3 className='project-name'>{project.name}</h3>
+					{project.asciiLogo && project.url ? (
+						<a
+							href={project.url}
+							target='_blank'
+							rel='noopener noreferrer'
+							className='project-title-link'
+						>
+							<h3 className='project-name'>{project.name}</h3>
+							<span className='project-arrow'>
+								<ArrowIcon />
+							</span>
+						</a>
+					) : (
+						<h3 className='project-name'>{project.name}</h3>
+					)}
 					{project.status && (
 						<span className='project-status'>{project.status}</span>
 					)}
-					{project.url && (
+					{project.url && !project.asciiLogo && (
 						<span className='project-arrow'>
 							<ArrowIcon />
 						</span>
@@ -66,7 +80,7 @@ export function Projects() {
 
 					<div className='project-list'>
 						{PROJECTS.map((project, i) =>
-							project.url ? (
+							project.url && !project.asciiLogo ? (
 								<a
 									key={project.name}
 									href={project.url}
