@@ -957,6 +957,22 @@ main {
 	line-height: 1.9;
 }
 
+.text-link {
+	color: var(--ink);
+	text-decoration: underline;
+	text-decoration-color: rgb(var(--red-rgb) / 0.6);
+	text-decoration-thickness: 1px;
+	text-underline-offset: 3px;
+	transition:
+		color 0.4s $ease-soft,
+		text-decoration-color 0.4s $ease-soft;
+
+	&:hover {
+		color: var(--red);
+		text-decoration-color: var(--red);
+	}
+}
+
 .facts-card {
 	display: flex;
 	align-items: center;

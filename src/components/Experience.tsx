@@ -1,4 +1,30 @@
+import type { ReactNode } from 'react'
 import { EXPERIENCE_ITEMS } from '../data/content'
+
+const LINK_PATTERN = /\[([^\]]+)\]\(([^)]+)\)/g
+
+function withLinks(text: string): ReactNode[] {
+	const nodes: ReactNode[] = []
+	let last = 0
+	for (const match of text.matchAll(LINK_PATTERN)) {
+		const index = match.index ?? 0
+		nodes.push(text.slice(last, index))
+		nodes.push(
+			<a
+				key={index}
+				href={match[2]}
+				target='_blank'
+				rel='noopener noreferrer'
+				className='text-link'
+			>
+				{match[1]}
+			</a>,
+		)
+		last = index + match[0].length
+	}
+	nodes.push(text.slice(last))
+	return nodes
+}
 
 export function Experience() {
 	return (
@@ -34,7 +60,7 @@ export function Experience() {
 											),
 										)}
 									</div>
-									<p className='timeline-desc'>{item.desc}</p>
+									<p className='timeline-desc'>{withLinks(item.desc)}</p>
 								</div>
 							</div>
 						))}

@@ -49,7 +49,16 @@ export function Hero({
 
 							<p className='hero-subtitle'>
 								Fullstack developer based in the Netherlands, working remotely.
-								I build products at Task Force and ship my own on the side.
+								I build products at{' '}
+								<a
+									href='https://taskforce.now/'
+									target='_blank'
+									rel='noopener noreferrer'
+									className='text-link'
+								>
+									Taskforce
+								</a>{' '}
+								and ship my own on the side.
 							</p>
 
 							<div className='hero-buttons'>

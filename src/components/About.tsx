@@ -18,7 +18,16 @@ export function About() {
 								code, try things, come back with something that works.
 							</p>
 							<p className='section-text'>
-								At Task Force I write whatever the project needs, which right
+								At{' '}
+								<a
+									href='https://taskforce.now/'
+									target='_blank'
+									rel='noopener noreferrer'
+									className='text-link'
+								>
+									Taskforce
+								</a>{' '}
+								I write whatever the project needs, which right
 								now is NestJS and TypeScript on the backend and React on the
 								front. For my own backends I reach for Go.
 							</p>
