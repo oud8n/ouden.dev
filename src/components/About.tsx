@@ -28,22 +28,13 @@ export function About() {
 								"Code you understand beats code that looks clever."
 							</p>
 							<p className='section-text'>
-								I care about writing code that works and that I actually
-								understand. Not clever, not trendy — code that does what it's
-								supposed to do.
+								Most of my time goes into backend: APIs, databases, and keeping
+								services stable under load. Go and Node on the server, React
+								when there's a UI to build, Docker to ship it.
 							</p>
 							<p className='section-text'>
-								Backend is where I spend most time. APIs, databases, scaling
-								systems that don't fall apart. But I do full-stack because
-								sometimes you need to — React for frontend, Go and Node for
-								backend, Docker for deployment. Whatever solves the problem.
-							</p>
-							<p className='section-text'>
-								Read documentation instead of StackOverflow. Understand why
-								something works, not just copy the solution. Break your own
-								code intentionally to see what breaks. That's how you actually
-								learn instead of just being another developer who can't debug
-								anything.
+								I learn from documentation and source code, and I break my own
+								projects on purpose to see what fails first.
 							</p>
 						</div>
 
