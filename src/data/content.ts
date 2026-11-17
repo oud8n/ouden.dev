@@ -80,21 +80,15 @@ export const ABOUT_FACTS = [
 
 export const EXPERIENCE_ITEMS = [
 	{
-		year: '2026 — Present',
-		title: 'Production Code',
-		desc: 'Backend intern at TASKFORCE, a team that builds websites. Debugging live issues, going through code review with senior developers, tracking down slow code and missing error handling.',
-		tags: ['TASKFORCE'],
+		year: 'Jul 2026 — now',
+		title: 'Fullstack developer',
+		desc: 'Full-cycle engineering team building products for clients. I work across the stack. On Flip Flow, a platform for US fix & flip real estate investments, I built backend features in NestJS and investor-facing pages in TypeScript and React.',
+		tags: ['Task Force'],
 	},
 	{
-		year: 'Ongoing',
-		title: 'Linux & Systems',
-		desc: 'CachyOS as my daily system. Knowing what happens at the OS level pays off when debugging and deploying. Working through HackTheBox machines on the side.',
-		tags: ['HackTheBox + Linux deep dives'],
-	},
-	{
-		year: 'In progress',
-		title: 'Fundamentals & Algorithms',
-		desc: 'Preparing for ITMO University: algorithms, data structures, complexity analysis. Learning C++ along the way.',
+		year: 'ongoing',
+		title: 'Own products',
+		desc: 'Alongside client work I build my own: физика.ai, a physics exam prep platform I lead, and chronly, a desktop time tracker. Both have Go backends.',
 		tags: [],
 	},
 ]
@@ -113,20 +107,20 @@ export const PROJECTS: Project[] = [
 		name: 'физика.ai',
 		status: 'in development',
 		image: 'projects/physics-ai.webp',
-		desc: 'Physics prep for the EGE and OGE. Problems from the open FIPI bank plus fresh ones for every exam task; answers are checked right away, three attempts with a hint, and the stats show which topics are lagging. Next.js frontend, Go backend with DeepSeek.',
-		tags: ['Next.js', 'TypeScript', 'Go', 'DeepSeek'],
+		desc: 'My own project: physics exam prep for the EGE and OGE. Problems from the open FIPI bank plus fresh ones for every exam task, instant answer checks with hints, and stats that show which topics are lagging. I lead the project.',
+		tags: ['Go', 'PostgreSQL', 'Next.js', 'TypeScript', 'DeepSeek'],
 	},
 	{
 		name: 'chronly',
-		url: 'https://github.com/skipy-force/chronly',
+		url: 'https://github.com/oud8n/chronly',
 		image: 'projects/chronly.webp',
-		desc: 'Desktop time tracker for Hyprland. Watches the active window in the background and sorts the time into projects on its own: a Today dashboard, a timeline, estimate vs. actual per task. Everything stays local in SQLite.',
+		desc: 'A desktop time tracker for Hyprland that I built for myself. It watches the active window in the background and sorts the time into projects on its own. Everything stays local in SQLite.',
 		tags: ['Go', 'Wails', 'React', 'SQLite'],
 	},
 	{
-		name: 'skipy.dev',
+		name: 'this site',
 		url: 'https://github.com/skipydev/skipy.dev',
-		desc: "This site. The marquee, the ASCII banner and the donut are hand-written, no UI libraries. Open source, take whatever's useful.",
+		desc: 'The marquee, the ASCII banner and the donut are hand-written, no UI libraries. Open source.',
 		tags: ['React', 'TypeScript', 'Vite'],
 	},
 ]

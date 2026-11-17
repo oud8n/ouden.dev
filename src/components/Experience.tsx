@@ -5,7 +5,9 @@ export function Experience() {
 		<section id='experience' className='section'>
 			<div>
 				<div className='section-content'>
-					<h2 className='section-title'>Learning by shipping.</h2>
+					<h2 className='section-title'>
+						Where I <span className='highlight'>work.</span>
+					</h2>
 
 					<div className='timeline'>
 						{EXPERIENCE_ITEMS.map(item => (
