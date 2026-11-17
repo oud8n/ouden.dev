@@ -55,8 +55,6 @@ export default function App() {
 
 	return (
 		<>
-			<div className='noise-overlay' />
-
 			<Header
 				isDark={isDark}
 				onToggleTheme={() => setIsDark(!isDark)}
