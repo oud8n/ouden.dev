@@ -1397,6 +1397,17 @@ main {
 	}
 }
 
+.project-shot-ascii {
+	position: relative;
+}
+
+.ascii-logo-canvas {
+	position: absolute;
+	inset: 0;
+	display: block;
+	touch-action: pan-y;
+}
+
 .project:hover {
 	.project-shot img {
 		filter: none;

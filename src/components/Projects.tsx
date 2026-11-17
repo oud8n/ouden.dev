@@ -1,4 +1,5 @@
 import { GITHUB_REPOS_URL, PROJECTS, type Project } from '../data/content'
+import { AsciiLogo } from './AsciiLogo'
 import { ArrowIcon } from './icons'
 
 function ProjectBody({ project, index }: { project: Project; index: number }) {
@@ -28,6 +29,15 @@ function ProjectBody({ project, index }: { project: Project; index: number }) {
 					))}
 				</div>
 			</div>
+
+			{project.asciiLogo && (
+				<div className='project-shot project-shot-ascii'>
+					<AsciiLogo
+						text={project.asciiLogo.text}
+						accent={project.asciiLogo.accent}
+					/>
+				</div>
+			)}
 
 			{project.image && (
 				<div className='project-shot'>
