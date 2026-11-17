@@ -17,7 +17,7 @@ export function Header({
 	onNavClick,
 }: HeaderProps) {
 	return (
-		<header className='header'>
+		<header className={`header ${isMenuOpen ? 'is-menu-open' : ''}`}>
 			<div className='header-inner'>
 				<a href='#' onClick={e => onNavClick(e, 'hero-top')} className='logo'>
 					<span className='logo-bracket'>{'{'}</span>

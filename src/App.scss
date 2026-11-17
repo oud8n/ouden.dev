@@ -521,6 +521,14 @@ button {
 	backdrop-filter: blur(20px);
 	border-bottom: 1px solid var(--border);
 	background: rgb(var(--bg-rgb) / 0.7);
+	transition:
+		border-color 0.35s $ease-soft,
+		background-color 0.35s $ease-soft;
+
+	&.is-menu-open {
+		border-bottom-color: transparent;
+		background: var(--bg);
+	}
 }
 
 .header-inner {
@@ -726,14 +734,27 @@ button {
 	height: calc(100vh - 84px);
 	height: calc(100dvh - 84px);
 	background: var(--bg);
-	display: none;
+	display: flex;
 	flex-direction: column;
 	padding: 24px 28px 100px;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transform: translateY(-10px);
+	transition:
+		opacity 0.35s $ease-soft,
+		transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+		visibility 0s linear 0.45s;
 
-	@media (max-width: 768px) {
-		&.is-open {
-			display: flex;
-		}
+	&.is-open {
+		opacity: 1;
+		visibility: visible;
+		pointer-events: auto;
+		transform: none;
+		transition:
+			opacity 0.35s $ease-soft,
+			transform 0.45s cubic-bezier(0.16, 1, 0.3, 1),
+			visibility 0s;
 	}
 }
 
@@ -750,6 +771,22 @@ button {
 	width: 100%;
 	padding: 24px 0;
 	border-bottom: 1px solid var(--border);
+	opacity: 0;
+	transform: translateY(8px);
+	transition:
+		opacity 0.4s $ease-soft,
+		transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+
+	.mobile-nav.is-open & {
+		opacity: 1;
+		transform: none;
+
+		@for $i from 1 through 6 {
+			&:nth-child(#{$i}) {
+				transition-delay: #{0.05 + $i * 0.05}s;
+			}
+		}
+	}
 
 	&:hover {
 		.mobile-nav-label {
