@@ -1,12 +1,20 @@
 import type { RefObject } from 'react'
+import type { useMusicPlayer } from '../hooks'
+import { AvatarRecord } from './AvatarRecord'
 
 type HeroProps = {
 	bannerRef: RefObject<HTMLDivElement | null>
 	asciiCanvasRef: RefObject<HTMLCanvasElement | null>
 	onScrollTo: (id: string) => void
+	music: ReturnType<typeof useMusicPlayer>
 }
 
-export function Hero({ bannerRef, asciiCanvasRef, onScrollTo }: HeroProps) {
+export function Hero({
+	bannerRef,
+	asciiCanvasRef,
+	onScrollTo,
+	music,
+}: HeroProps) {
 	return (
 		<section id='hero-top' className='hero-section'>
 			<div className='profile-banner' ref={bannerRef}>
@@ -16,13 +24,11 @@ export function Hero({ bannerRef, asciiCanvasRef, onScrollTo }: HeroProps) {
 			<div className='reveal hero-content'>
 				<div className='profile-header-row'>
 					<div className='profile-left'>
-						<div className='profile-avatar-wrap'>
-							<img
-								src={`${import.meta.env.BASE_URL}avatar.gif`}
-								alt='Skipy'
-								className='profile-avatar'
-							/>
-						</div>
+						<AvatarRecord
+							audioRef={music.audioRef}
+							isPlaying={music.isPlaying}
+							onToggle={music.toggle}
+						/>
 
 						<div className='profile-info-wrap'>
 							<div className='profile-meta'>
