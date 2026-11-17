@@ -5,7 +5,6 @@ export function useMusicPlayer() {
 	const [isPlaying, setIsPlaying] = useState(false)
 	const [hasError, setHasError] = useState(false)
 
-	// state follows the element, so media keys / OS controls stay in sync
 	useEffect(() => {
 		const audio = audioRef.current
 		if (!audio) return
