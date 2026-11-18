@@ -395,7 +395,7 @@ html.dark-theme {
 
 	span {
 		white-space: pre;
-		animation: lineIn 0.4s $ease backwards;
+		animation: lineIn 0.7s $ease backwards;
 	}
 }
 
@@ -502,14 +502,14 @@ html.dark-theme {
 }
 
 .packet-right {
-	animation: toRight 1.3s $ease forwards;
+	animation: toRight 2.3s $ease forwards;
 }
 
 .packet-left {
-	animation: toLeft 1.3s $ease forwards;
+	animation: toLeft 2.3s $ease forwards;
 
 	&.is-lost {
-		animation: lost 1.4s ease-out forwards;
+		animation: lost 2.4s ease-out forwards;
 	}
 }
 
@@ -581,7 +581,7 @@ html.dark-theme {
 .retry-row {
 	padding: 5px 10px;
 	border: 1px solid var(--border-strong);
-	animation: rowIn 0.5s $ease;
+	animation: rowIn 0.8s $ease;
 
 	&.is-dup {
 		color: var(--red);
@@ -660,7 +660,7 @@ html.dark-theme {
 		color 0.4s;
 
 	&.is-fresh {
-		animation: rowIn 0.5s $ease;
+		animation: rowIn 0.8s $ease;
 	}
 
 	&.is-open {
@@ -826,7 +826,7 @@ html.dark-theme {
 }
 
 .race-table-row {
-	animation: rowIn 0.5s $ease;
+	animation: rowIn 0.8s $ease;
 
 	&.is-held {
 		background: rgb(var(--amber-rgb) / 0.1);
@@ -1016,7 +1016,7 @@ html.dark-theme {
 		padding: 8px 10px;
 		margin-bottom: 6px;
 		border-left: 2px solid var(--border-strong);
-		animation: lineIn 0.45s $ease backwards;
+		animation: lineIn 0.7s $ease backwards;
 		overflow-wrap: anywhere;
 	}
 
