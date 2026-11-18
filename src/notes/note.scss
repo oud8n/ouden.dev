@@ -284,6 +284,7 @@ html.dark-theme {
 
 .fig-num {
 	color: var(--red);
+	white-space: nowrap;
 }
 
 .fig-title {
@@ -1052,6 +1053,460 @@ html.dark-theme {
 	display: block;
 	color: var(--muted-2);
 	border-left: 0;
+}
+
+.pipe-stages {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	gap: 4px;
+	margin: 0 0 18px;
+	padding: 0;
+	list-style: none;
+}
+
+.pipe-stage {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 8px;
+	font-size: 11px;
+	text-align: center;
+	color: var(--muted-2);
+
+	&:not(:last-child)::after {
+		content: '';
+		position: absolute;
+		top: 15px;
+		left: calc(50% + 17px);
+		right: calc(-50% + 17px);
+		border-top: 1.5px dashed var(--border-strong);
+	}
+
+	&.is-ok,
+	&.is-fix,
+	&.is-fail {
+		color: var(--ink);
+	}
+}
+
+.pipe-dot {
+	display: grid;
+	place-items: center;
+	width: 32px;
+	height: 32px;
+	font-size: 14px;
+	font-weight: 700;
+	border: 1.5px solid var(--border-strong);
+	transition:
+		background 0.5s,
+		border-color 0.5s,
+		color 0.5s;
+
+	.is-ok & {
+		color: var(--bg);
+		background: var(--green);
+		border-color: var(--green);
+		animation: pop 0.6s $ease;
+	}
+
+	.is-fix & {
+		color: var(--bg);
+		background: var(--amber);
+		border-color: var(--amber);
+		animation: pop 0.6s $ease;
+	}
+
+	.is-fail & {
+		color: var(--bg);
+		background: var(--red);
+		border-color: var(--red);
+		animation:
+			pop 0.6s $ease,
+			shake 0.5s 0.4s;
+	}
+
+	.is-skip & {
+		opacity: 0.25;
+		border-style: dashed;
+	}
+}
+
+.pipe-label {
+	overflow-wrap: anywhere;
+
+	@media (max-width: 480px) {
+		font-size: 9.5px;
+	}
+}
+
+.pipe-verdict {
+	margin-top: 14px;
+	padding: 12px 14px;
+	font-size: 13px;
+	font-weight: 700;
+	text-align: center;
+	transition:
+		background 0.5s,
+		color 0.5s;
+
+	&.is-wait {
+		color: var(--muted-2);
+		background: var(--surface);
+	}
+
+	&.is-ok {
+		color: var(--green);
+		background: rgb(var(--green-rgb) / 0.1);
+		animation: lineIn 0.7s $ease;
+	}
+
+	&.is-fail {
+		color: var(--red);
+		background: var(--red-dim);
+		animation: lineIn 0.7s $ease;
+	}
+}
+
+.calc-json {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 6px;
+	padding: 14px;
+	font-size: 12px;
+	line-height: 1.7;
+	background: var(--surface);
+	border: 1px solid var(--border);
+}
+
+.calc-expr,
+.calc-answer input {
+	min-width: 0;
+	padding: 4px 8px;
+	font: inherit;
+	color: var(--ink);
+	background: var(--bg);
+	border: 1px solid var(--border-strong);
+	border-radius: 0;
+
+	&:focus {
+		outline: none;
+		border-color: var(--red);
+	}
+}
+
+.calc-expr {
+	flex: 1 1 220px;
+	color: var(--amber);
+}
+
+.calc-vars {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px 12px;
+}
+
+.calc-answer {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+	margin-top: 14px;
+	font-size: 13px;
+
+	input {
+		width: 110px;
+	}
+}
+
+.calc-unit {
+	color: var(--muted-2);
+}
+
+.calc-line {
+	position: relative;
+	height: 74px;
+	margin: 20px 8px 0;
+	border-bottom: 1.5px solid var(--border-strong);
+}
+
+.calc-band {
+	position: absolute;
+	bottom: 0;
+	height: 26px;
+	background: rgb(var(--green-rgb) / 0.18);
+	border-left: 1px solid var(--green);
+	border-right: 1px solid var(--green);
+	transition:
+		left 0.6s $ease,
+		right 0.6s $ease;
+}
+
+.calc-want,
+.calc-got {
+	position: absolute;
+	bottom: 0;
+	width: 0;
+	transition: left 0.8s $ease;
+
+	span {
+		position: absolute;
+		left: 50%;
+		transform: translateX(-50%);
+		font-size: 10.5px;
+		white-space: nowrap;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		left: -1px;
+		bottom: 0;
+		width: 2px;
+	}
+}
+
+.calc-want {
+	&::before {
+		height: 34px;
+		background: var(--ink);
+	}
+
+	span {
+		bottom: 36px;
+		color: var(--muted);
+	}
+}
+
+.calc-got {
+	&::before {
+		height: 52px;
+	}
+
+	span {
+		bottom: 54px;
+		font-weight: 700;
+	}
+
+	&.is-ok {
+		&::before {
+			background: var(--green);
+		}
+
+		span {
+			color: var(--green);
+		}
+	}
+
+	&.is-off {
+		&::before {
+			background: var(--red);
+		}
+
+		span {
+			color: var(--red);
+		}
+	}
+}
+
+.chat {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	min-height: 360px;
+}
+
+.chat-msg {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	max-width: 86%;
+	padding: 10px 12px;
+	font-size: 12px;
+	line-height: 1.6;
+	border: 1px solid var(--border-strong);
+	animation: lineIn 0.7s $ease backwards;
+
+	&.is-author {
+		align-self: flex-start;
+	}
+
+	&.is-solver {
+		align-self: flex-end;
+		border-color: rgb(var(--green-rgb) / 0.5);
+	}
+
+	&.is-server {
+		align-self: center;
+		max-width: 100%;
+		color: var(--muted);
+		border-style: dashed;
+		text-align: center;
+	}
+
+	&.is-bad {
+		color: var(--red);
+		border-color: var(--red);
+		background: var(--red-dim);
+	}
+
+	&.is-ok {
+		color: var(--green);
+		border-color: var(--green);
+		background: rgb(var(--green-rgb) / 0.1);
+	}
+}
+
+.chat-who {
+	font-size: 10.5px;
+	font-weight: 700;
+	color: var(--muted-2);
+
+	.is-author & {
+		color: var(--amber);
+	}
+
+	.is-solver & {
+		color: var(--green);
+	}
+}
+
+.chat-text {
+	white-space: pre-wrap;
+	overflow-wrap: anywhere;
+}
+
+.chat-hint {
+	color: var(--muted-2);
+	font-size: 12px;
+}
+
+.graph-json {
+	width: 100%;
+	min-height: 78px;
+	padding: 10px 12px;
+	font: inherit;
+	font-size: 12px;
+	line-height: 1.6;
+	color: var(--amber);
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: 0;
+	resize: vertical;
+
+	&:focus {
+		outline: none;
+		border-color: var(--red);
+	}
+}
+
+.graph-out {
+	display: grid;
+	gap: 14px;
+	margin-top: 14px;
+
+	@media (min-width: 700px) {
+		grid-template-columns: 1.2fr 1fr;
+	}
+}
+
+.graph-pane {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	padding: 12px;
+	font-size: 12px;
+	border: 1px solid var(--border);
+}
+
+.graph-svg {
+	width: 100%;
+	height: auto;
+}
+
+.graph-axis {
+	stroke: var(--muted);
+	stroke-width: 1.2;
+}
+
+.graph-guide {
+	stroke: var(--border-strong);
+	stroke-dasharray: 3 3;
+}
+
+.graph-line {
+	fill: none;
+	stroke: var(--red);
+	stroke-width: 2.5;
+	stroke-linejoin: round;
+	stroke-dasharray: 1;
+	stroke-dashoffset: 1;
+	animation: draw 1.4s $ease forwards;
+}
+
+@keyframes draw {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+.graph-dot {
+	fill: var(--red);
+}
+
+.graph-label,
+.graph-tick {
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 10px;
+	fill: var(--muted);
+}
+
+.graph-text {
+	margin: 0;
+	font-size: 11.5px;
+	line-height: 1.6;
+	white-space: pre-wrap;
+	color: var(--muted);
+}
+
+.graph-err {
+	color: var(--red);
+}
+
+.fall-bar {
+	position: relative;
+	height: 34px;
+	border: 1px solid var(--border-strong);
+	overflow: hidden;
+}
+
+.fall-fill {
+	position: absolute;
+	inset: 0 auto 0 0;
+	background: linear-gradient(90deg, rgb(var(--green-rgb) / 0.35), rgb(var(--amber-rgb) / 0.4) 70%, rgb(var(--red-rgb) / 0.5));
+}
+
+.fall-deadline,
+.fall-time {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 11.5px;
+}
+
+.fall-deadline {
+	right: 10px;
+	color: var(--red);
+}
+
+.fall-time {
+	left: 10px;
+	font-weight: 700;
+}
+
+.fall-lines {
+	min-height: 210px;
+	margin-top: 16px;
 }
 
 @media (prefers-reduced-motion: reduce) {

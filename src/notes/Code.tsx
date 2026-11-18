@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 
 const TOKEN =
-	/('[^']*'|`[^`]*`)|\b(const|if|return|new|await|async|function|export|import|from)\b|\b(true|false|null|undefined)\b|(\/\/.*$)|(@\w+)|(\b[A-Za-z_]\w*(?=\())/gm
+	/('[^']*'|`[^`]*`|"[^"\n]*")|\b(const|if|return|new|await|async|function|export|import|from|func|var|SELECT|DELETE|FROM|WHERE|ORDER|BY|LIMIT|FOR|UPDATE|SKIP|LOCKED|RETURNING)\b|\b(true|false|null|undefined|nil)\b|(\/\/.*$)|(@\w+)|(\b[A-Za-z_]\w*(?=\())/gm
 
 const KINDS = ['str', 'kw', 'lit', 'com', 'dec', 'fn']
 
