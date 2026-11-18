@@ -9,6 +9,7 @@ const TARGETS = [
 	'.timeline-item',
 	'.project',
 	'.project-all',
+	'.note-card',
 	'.contact-row',
 	'.contact-closing',
 ].join(',')

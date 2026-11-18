@@ -2,13 +2,21 @@ import { CONTACTS } from '../data/content'
 
 const footerContacts = CONTACTS.filter(c => c.inFooter)
 
-export function Footer() {
+type FooterProps = {
+	onOpenTerminal: () => void
+}
+
+export function Footer({ onOpenTerminal }: FooterProps) {
 	return (
 		<footer className='footer'>
 			<div className='footer-inner'>
 				<span className='footer-text'>
 					© 2026 ouden — built with React, Vite &amp; SCSS
 				</span>
+
+				<button className='footer-terminal' onClick={onOpenTerminal}>
+					<span className='footer-terminal-icon'>&gt;_</span> terminal · ~
+				</button>
 
 				<div className='footer-links'>
 					{footerContacts.map(contact => (
