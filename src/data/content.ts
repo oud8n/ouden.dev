@@ -1,4 +1,5 @@
 import {
+	EmailIcon,
 	DiscordIcon,
 	GithubIcon,
 	TelegramIcon,
@@ -118,7 +119,7 @@ export const PROJECTS: Project[] = [
 		name: 'физика.ai',
 		status: 'in development',
 		image: 'projects/physics-ai.webp',
-		desc: 'My own project: physics exam prep for the EGE and OGE. Problems from the open FIPI bank plus fresh ones for every exam task, instant answer checks with hints, and stats that show which topics are lagging. I lead the project.',
+		desc: 'My EdTech platform for Russia\'s national high-school physics exams (EGE/OGE). It combines the official problem bank with freshly generated tasks, checks answers instantly with hints, and tracks progress topic by topic.',
 		tags: ['Go', 'PostgreSQL', 'Next.js', 'TypeScript', 'DeepSeek'],
 	},
 	{
@@ -132,7 +133,7 @@ export const PROJECTS: Project[] = [
 		name: 'this site',
 		asciiLogo: { text: 'oud8n', accent: '8' },
 		url: 'https://github.com/skipydev/skipy.dev',
-		desc: 'The marquee, the ASCII banner and the donut are hand-written, no UI libraries. Open source.',
+		desc: 'Built from scratch with no UI libraries, including the marquee, the ASCII banner and the spinning donut. Open source.',
 		tags: ['React', 'TypeScript', 'Vite'],
 	},
 ]
@@ -141,6 +142,8 @@ const GITHUB_HANDLE = 'oud8n'
 export const GITHUB_URL = `https://github.com/${GITHUB_HANDLE}`
 const TELEGRAM_HANDLE = '@oud8n'
 export const TELEGRAM_URL = 'https://t.me/oud8n'
+const EMAIL_HANDLE = 'skipyy1@proton.me'
+const EMAIL_URL = `mailto:${EMAIL_HANDLE}`
 const DISCORD_HANDLE = 'socoolbaby'
 const DISCORD_URL = 'https://discord.gg/VKqSreqpHw'
 
@@ -170,6 +173,15 @@ export const CONTACTS = [
 		handle: DISCORD_HANDLE,
 		url: DISCORD_URL,
 		Icon: DiscordIcon,
+		inFooter: true,
+	},
+	{
+		id: 'email',
+		name: 'Email',
+		sub: 'work inquiries',
+		handle: EMAIL_HANDLE,
+		url: EMAIL_URL,
+		Icon: EmailIcon,
 		inFooter: true,
 	},
 ]

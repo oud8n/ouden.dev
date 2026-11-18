@@ -15,8 +15,14 @@ export function Footer() {
 						<a
 							key={contact.id}
 							href={contact.url}
-							target='_blank'
-							rel='noopener noreferrer'
+							target={
+								contact.url.startsWith('mailto:') ? undefined : '_blank'
+							}
+							rel={
+								contact.url.startsWith('mailto:')
+									? undefined
+									: 'noopener noreferrer'
+							}
 							aria-label={contact.name}
 							className='footer-icon magnetic'
 						>
