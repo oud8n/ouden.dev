@@ -16,6 +16,15 @@ export const NAV_ITEMS = [
 
 export const NOTES = [
 	{
+		slug: 'llm-physics',
+		date: 'Nov 19, 2026',
+		readTime: '9 min',
+		title: 'Don’t trust the generator: self-checking physics problems',
+		summary:
+			'How physics.ai checks every LLM-generated exam problem before a student sees it: a formula the server can run, a blind solve by a second model, an examiner with a rubric and a 20-second fallback. With interactive diagrams.',
+		tags: ['LLM', 'Go', 'physics.ai'],
+	},
+	{
 		slug: 'idempotency',
 		date: 'Nov 18, 2026',
 		readTime: '7 min',

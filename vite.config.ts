@@ -11,6 +11,7 @@ export default defineConfig({
 			input: {
 				main: resolve(import.meta.dirname, 'index.html'),
 				idempotency: resolve(import.meta.dirname, 'notes/idempotency/index.html'),
+				llmPhysics: resolve(import.meta.dirname, 'notes/llm-physics/index.html'),
 			},
 		},
 	},
