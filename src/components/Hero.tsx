@@ -49,7 +49,7 @@ export function Hero({
 
 							<p className='hero-subtitle'>
 								Based in the Netherlands, working remotely.
-								I build products at{' '}
+								I build client products at{' '}
 								<a
 									href='https://taskforce.now/'
 									target='_blank'
