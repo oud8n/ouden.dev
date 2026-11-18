@@ -31,7 +31,7 @@ export function Stack() {
 			<div>
 				<div className='section-content'>
 					<h2 className='section-title'>
-						the <span className='highlight'>working</span> stack.
+						The <span className='highlight'>working</span> stack.
 					</h2>
 					<p className='section-description'>
 						Tools I've used in real projects, grouped by where they sit in

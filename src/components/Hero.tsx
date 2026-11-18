@@ -48,7 +48,7 @@ export function Hero({
 							</div>
 
 							<p className='hero-subtitle'>
-								Fullstack developer based in the Netherlands, working remotely.
+								Based in the Netherlands, working remotely.
 								I build products at{' '}
 								<a
 									href='https://taskforce.now/'
