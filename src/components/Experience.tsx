@@ -61,6 +61,13 @@ export function Experience() {
 										)}
 									</div>
 									<p className='timeline-desc'>{withLinks(item.desc)}</p>
+									{item.points && (
+										<ul className='timeline-points'>
+											{item.points.map(point => (
+												<li key={point}>{point}</li>
+											))}
+										</ul>
+									)}
 								</div>
 							</div>
 						))}

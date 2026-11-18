@@ -1284,6 +1284,31 @@ main {
 	max-width: 720px;
 }
 
+.timeline-points {
+	list-style: none;
+	margin-top: 14px;
+	max-width: 720px;
+
+	li {
+		position: relative;
+		padding-left: 24px;
+		font-size: 14.5px;
+		line-height: 1.7;
+		color: var(--muted);
+
+		& + li {
+			margin-top: 8px;
+		}
+
+		&::before {
+			content: '→';
+			position: absolute;
+			left: 0;
+			color: var(--red);
+		}
+	}
+}
+
 .project-list {
 	margin-top: 56px;
 	border-top: 1px solid var(--border);
