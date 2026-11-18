@@ -10,7 +10,20 @@ export const NAV_ITEMS = [
 	{ id: 'stack', num: '02', label: 'stack' },
 	{ id: 'experience', num: '03', label: 'experience' },
 	{ id: 'projects', num: '04', label: 'projects' },
-	{ id: 'contact', num: '05', label: 'contact' },
+	{ id: 'notes', num: '05', label: 'notes' },
+	{ id: 'contact', num: '06', label: 'contact' },
+]
+
+export const NOTES = [
+	{
+		slug: 'idempotency',
+		date: 'Nov 18, 2026',
+		readTime: '7 min',
+		title: 'Idempotency keys, on by default',
+		summary:
+			'Flipping idempotency from opt-in to opt-out across a NestJS API, and the one route where “safe by default” would have handed out someone else’s session. With interactive diagrams.',
+		tags: ['NestJS', 'API design', 'security'],
+	},
 ]
 
 export const STACK_CHAPTERS = [

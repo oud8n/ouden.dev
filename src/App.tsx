@@ -6,8 +6,10 @@ import { Experience } from './components/Experience'
 import { Footer } from './components/Footer'
 import { Header } from './components/Header'
 import { Hero } from './components/Hero'
+import { Notes } from './components/Notes'
 import { Projects } from './components/Projects'
 import { Stack } from './components/Stack'
+import { Terminal } from './components/Terminal'
 import {
 	useAsciiBackground,
 	useMagnetic,
@@ -23,6 +25,23 @@ export default function App() {
 	})
 
 	const [isMenuOpen, setIsMenuOpen] = useState(false)
+	const [isTerminalOpen, setIsTerminalOpen] = useState(false)
+
+	useEffect(() => {
+		const onKey = (e: KeyboardEvent) => {
+			const target = e.target
+			if (
+				target instanceof HTMLElement &&
+				target.closest('input, textarea, [contenteditable]')
+			)
+				return
+			if (e.key !== '~' && e.key !== '`') return
+			e.preventDefault()
+			setIsTerminalOpen(prev => !prev)
+		}
+		window.addEventListener('keydown', onKey)
+		return () => window.removeEventListener('keydown', onKey)
+	}, [])
 
 	const music = useMusicPlayer()
 	const asciiCanvasRef = useRef<HTMLCanvasElement>(null)
@@ -73,10 +92,16 @@ export default function App() {
 				<Stack />
 				<Experience />
 				<Projects />
+				<Notes />
 				<Contact onScrollTo={handleScroll} />
 			</main>
 
-			<Footer />
+			<Footer onOpenTerminal={() => setIsTerminalOpen(true)} />
+			<Terminal
+				open={isTerminalOpen}
+				onClose={() => setIsTerminalOpen(false)}
+				onToggleTheme={() => setIsDark(prev => !prev)}
+			/>
 		</>
 	)
 }

@@ -1,8 +1,17 @@
 import babel from '@rolldown/plugin-babel'
 import react, { reactCompilerPreset } from '@vitejs/plugin-react'
+import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
 	base: '/skipy.dev/',
 	plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
+	build: {
+		rollupOptions: {
+			input: {
+				main: resolve(import.meta.dirname, 'index.html'),
+				idempotency: resolve(import.meta.dirname, 'notes/idempotency/index.html'),
+			},
+		},
+	},
 })
