@@ -28,6 +28,63 @@ function useReadingProgress(): number {
 	return progress
 }
 
+type NoteShellProps = {
+	children: ReactNode
+	progress?: boolean
+}
+
+export function NoteShell({ children, progress = false }: NoteShellProps) {
+	const [isDark, setIsDark] = useState(readTheme)
+	const read = useReadingProgress()
+	const home = import.meta.env.BASE_URL
+
+	useEffect(() => {
+		document.documentElement.classList.toggle('dark-theme', isDark)
+		try {
+			localStorage.setItem('theme', isDark ? 'dark' : 'light')
+		} catch {
+			return
+		}
+	}, [isDark])
+
+	return (
+		<>
+			{progress && (
+				<div
+					className='note-progress'
+					style={{ transform: `scaleX(${read})` }}
+					aria-hidden='true'
+				/>
+			)}
+			<header className='note-header'>
+				<a href={home} className='note-brand'>
+					<span className='note-brace'>{'{'}</span> ouden{' '}
+					<span className='note-brace'>{'}'}</span>
+				</a>
+				<nav className='note-nav'>
+					<a href={`${home}notes/`}>all notes</a>
+					<button
+						className='note-theme'
+						onClick={() => setIsDark(prev => !prev)}
+						aria-label='Toggle theme'
+					>
+						{isDark ? '☾' : '☀'}
+					</button>
+				</nav>
+			</header>
+
+			{children}
+
+			<footer className='note-footer'>
+				<a href={home} className='text-link'>
+					← back to ouden
+				</a>
+				<span>written by @oud8n</span>
+			</footer>
+		</>
+	)
+}
+
 type NoteLayoutProps = {
 	title: ReactNode
 	date: string
@@ -43,43 +100,8 @@ export function NoteLayout({
 	lead,
 	children,
 }: NoteLayoutProps) {
-	const [isDark, setIsDark] = useState(readTheme)
-	const progress = useReadingProgress()
-	const home = import.meta.env.BASE_URL
-
-	useEffect(() => {
-		document.documentElement.classList.toggle('dark-theme', isDark)
-		try {
-			localStorage.setItem('theme', isDark ? 'dark' : 'light')
-		} catch {
-			return
-		}
-	}, [isDark])
-
 	return (
-		<>
-			<div
-				className='note-progress'
-				style={{ transform: `scaleX(${progress})` }}
-				aria-hidden='true'
-			/>
-			<header className='note-header'>
-				<a href={home} className='note-brand'>
-					<span className='note-brace'>{'{'}</span> ouden{' '}
-					<span className='note-brace'>{'}'}</span>
-				</a>
-				<nav className='note-nav'>
-					<a href={`${home}#notes`}>← all notes</a>
-					<button
-						className='note-theme'
-						onClick={() => setIsDark(prev => !prev)}
-						aria-label='Toggle theme'
-					>
-						{isDark ? '☾' : '☀'}
-					</button>
-				</nav>
-			</header>
-
+		<NoteShell progress>
 			<main className='note'>
 				<div className='note-meta'>
 					<span>{date}</span>
@@ -90,13 +112,6 @@ export function NoteLayout({
 				<p className='note-lead'>{lead}</p>
 				<article className='note-body'>{children}</article>
 			</main>
-
-			<footer className='note-footer'>
-				<a href={home} className='text-link'>
-					← back to ouden
-				</a>
-				<span>written by @oud8n</span>
-			</footer>
-		</>
+		</NoteShell>
 	)
 }

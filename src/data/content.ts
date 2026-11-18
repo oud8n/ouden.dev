@@ -14,6 +14,39 @@ export const NAV_ITEMS = [
 	{ id: 'contact', num: '06', label: 'contact' },
 ]
 
+export const NOTES_UPCOMING = [
+	{
+		title: 'The race condition in my login rate limiter',
+		status: 'next',
+		pitch:
+			'Read, check, increment: how parallel sign-in attempts slipped past the limit, and why trusting X-Forwarded-For lets an attacker pick their own IP.',
+	},
+	{
+		title: 'Credits without a mutex',
+		status: 'planned',
+		pitch:
+			'Why a Go mutex stops helping once there are two servers, and the one UPDATE … RETURNING that makes spending credits atomic.',
+	},
+	{
+		title: 'SQLITE_BUSY and a desktop app that writes from three places',
+		status: 'planned',
+		pitch:
+			'chronly writes from the tracker, the tray and the UI at once. WAL mode, busy_timeout and an idle detector with a fallback chain.',
+	},
+	{
+		title: 'Importing a problem bank that wasn’t built to be imported',
+		status: 'planned',
+		pitch:
+			'windows-1251 pages, TLS quirks, imports that resume where they stopped and answers checked against the source’s own solver.',
+	},
+	{
+		title: 'Refactoring forms without changing a pixel',
+		status: 'planned',
+		pitch:
+			'A config-driven form generator that replaced hand-built forms while keeping the markup and every value write exactly as before.',
+	},
+]
+
 export const NOTES = [
 	{
 		slug: 'llm-physics',

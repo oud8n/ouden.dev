@@ -40,6 +40,11 @@ export function Notes() {
 							</a>
 						))}
 					</div>
+
+					<a href={`${import.meta.env.BASE_URL}notes/`} className='project-all'>
+						<span>all notes and what’s coming</span>
+						<ArrowIcon />
+					</a>
 				</div>
 			</div>
 		</section>
