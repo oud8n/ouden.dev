@@ -85,12 +85,20 @@ export const EXPERIENCE_ITEMS: {
 	year: string
 	title: string
 	desc: string
+	points?: string[]
 	tags: ExperienceTag[]
 }[] = [
 	{
 		year: 'Jul 2026 — now',
 		title: 'Fullstack developer',
-		desc: '[Taskforce](https://taskforce.now/) is a full-cycle engineering team building products for clients. I work across the stack. On [Flip Flow](https://flipflow.fund/), a platform for US fix & flip real estate investments, I built backend features in NestJS and investor-facing pages in TypeScript and React.',
+		desc: '[Taskforce](https://taskforce.now/) is a full-cycle engineering team building products for clients. I work across the stack. On [Flip Flow](https://flipflow.fund/), a platform for US fix & flip real estate investments, my work is mostly about making things reliable and reusable rather than writing them from scratch:',
+		points: [
+			'Idempotency keys for every write request through one global interceptor, so a retried request never creates a duplicate.',
+			'Rate limiting and brute-force protection on sign-in, including a fix for a race condition in login throttling.',
+			'Idle-session expiry with a scheduled cleanup job.',
+			'A config-driven form generator that now powers investor and operator applications and sign-in.',
+			'The investor admission flow: jurisdiction and accreditation steps, with refusals routed to manual review.',
+		],
 		tags: [
 			{ label: 'Taskforce', url: 'https://taskforce.now/' },
 			{ label: 'Flip Flow', url: 'https://flipflow.fund/' },
