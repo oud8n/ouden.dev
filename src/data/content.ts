@@ -99,7 +99,7 @@ export const EXPERIENCE_ITEMS: {
 	{
 		year: 'ongoing',
 		title: 'Own products',
-		desc: 'Alongside client work I build my own: физика.ai, a physics exam prep platform I lead, and chronly, a desktop time tracker. Both have Go backends.',
+		desc: 'Alongside client work I build my own: physics.ai, a physics exam prep platform I lead, and chronly, a desktop time tracker. Both have Go backends.',
 		tags: [],
 	},
 ]
@@ -116,7 +116,7 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
 	{
-		name: 'физика.ai',
+		name: 'physics.ai',
 		status: 'in development',
 		image: 'projects/physics-ai.webp',
 		desc: 'My EdTech platform for Russia\'s national high-school physics exams (EGE/OGE). It combines the official problem bank with freshly generated tasks, checks answers instantly with hints, and tracks progress topic by topic.',
