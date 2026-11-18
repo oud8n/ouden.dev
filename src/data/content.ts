@@ -107,7 +107,15 @@ export const EXPERIENCE_ITEMS: {
 	{
 		year: 'ongoing',
 		title: 'Own products',
-		desc: 'Alongside client work I build my own: physics.ai, a physics exam prep platform I lead, and chronly, a desktop time tracker. Both have Go backends.',
+		desc: 'Alongside client work I build my own: physics.ai, a physics exam prep platform I lead, and chronly, a desktop time tracker. Both have Go backends. A few things from under the hood:',
+		points: [
+			'physics.ai: a resumable importer for the official FIPI bank that handles windows-1251 pages and FIPI\'s TLS quirks, stays polite with rate limits, takes turns between the EGE and OGE banks and checks answers against FIPI\'s own solver.',
+			'physics.ai: credits charged atomically in PostgreSQL instead of behind a mutex, and logs kept clean of passwords, emails, IPs and student answers.',
+			'physics.ai: MathJax and TikZJax served from our own server instead of third-party CDNs, with formulas that render on older iPhones too.',
+			'chronly: idle detection with a fallback chain, from the Wayland idle protocol down to raw evdev input when it is missing.',
+			'chronly: SQLite in WAL mode with a busy timeout, which ended SQLITE_BUSY errors under concurrent writes.',
+			'chronly: the whole UI re-themes live from the wallpaper palette via matugen, with real app icons, a tray menu and a Ctrl+K command palette.',
+		],
 		tags: [],
 	},
 ]
