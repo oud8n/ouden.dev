@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { FigButton, Figure, Toggle } from '../Figure'
 import { useInView, useSequence } from '../hooks'
 
-const DELAYS = [300, 1500, 1400, 1500, 1600]
+const DELAYS = [800, 2600, 2600, 2800, 2800]
 
 type Line = { who: 'alice' | 'mallory' | 'server'; text: string; tone?: 'bad' | 'good' }
 

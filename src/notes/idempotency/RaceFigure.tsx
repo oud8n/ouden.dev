@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { FigButton, Figure, Toggle } from '../Figure'
 import { useInView, useSequence } from '../hooks'
 
-const DELAYS = [400, 1300, 1300, 1400, 1300, 1400, 1300]
+const DELAYS = [1200, 2800, 2800, 3000, 2800, 3000, 2800]
 
 type Row = { status: string; body: string; state: 'held' | 'done' | 'gone' }
 

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { FigButton, Figure, Toggle } from '../Figure'
 import { useInView, useSequence } from '../hooks'
 
-const DELAYS = [300, 1400, 700, 1500, 900, 1400, 900, 1400]
+const DELAYS = [600, 2600, 1800, 2800, 2000, 2600, 2200, 2600]
 
 type Packet = { dir: 'right' | 'left'; label: string; lost?: boolean; ok?: boolean }
 
