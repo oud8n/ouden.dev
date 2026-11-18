@@ -1438,10 +1438,11 @@ a.project:hover {
 }
 
 .project-all {
-	display: inline-flex;
+	display: flex;
+	width: fit-content;
 	align-items: center;
 	gap: 10px;
-	margin-top: 28px;
+	margin: 28px auto 0;
 	font-size: 13.5px;
 	color: var(--muted-2);
 	transition: color 0.4s $ease-soft;

@@ -195,13 +195,9 @@
 				color: var(--red);
 			}
 
-			.project.chronly p {
-				margin-top: 1.2mm;
-			}
-
 			.skills {
 				display: grid;
-				grid-template-columns: 30mm 1fr;
+				grid-template-columns: 34mm 1fr;
 				row-gap: 1mm;
 			}
 
@@ -232,11 +228,10 @@
 				<h2 data-num="01">about</h2>
 				<p class="summary">
 					Fullstack developer working in TypeScript and Go. At Taskforce I build
-					client products across the stack, mostly on reliability and reuse:
-					making requests safe to retry, fixing concurrency bugs and turning
-					repeated code into shared building blocks. On the side I build and run
-					my own products. Open to remote work, full-time or contract. English
-					and Russian.
+					client products, mostly on reliability and reuse: requests that are
+					safe to retry, concurrency fixes, shared building blocks instead of
+					repeated code. I also build my own products. Open to remote work,
+					full-time or contract.
 				</p>
 			</section>
 
@@ -258,11 +253,8 @@
 					</li>
 					<li>
 						Added rate limiting and brute-force protection to sign-in, fixed a
-						race condition in login throttling and made client IP detection
-						correct behind proxies.
-					</li>
-					<li>
-						Implemented idle-session expiry with a scheduled cleanup job.
+						race condition in login throttling and client IP detection behind
+						proxies, and added idle-session expiry with a scheduled cleanup.
 					</li>
 					<li>
 						Created a config-driven form generator and moved the investor and
@@ -318,11 +310,26 @@
 						<h3>chronly</h3>
 						<span class="when">github.com/oud8n/chronly</span>
 					</div>
-					<p>
-						Desktop time tracker for Hyprland. Watches the active window in the
-						background and sorts time into projects on its own. All data stays
-						local in SQLite.
+					<p class="context">
+						Desktop time tracker for Hyprland that sorts my time into projects on
+						its own. Everything stays local in SQLite. Open source, MIT.
 					</p>
+					<ul class="points">
+						<li>
+							Background tracking of the focused window with idle and suspend
+							handling; activity is auto-assigned to projects by rules edited in
+							a pannable node graph, with compound conditions.
+						</li>
+						<li>
+							Stays fast on months of data: SQLite indexes, a virtualized
+							timeline, live counters isolated from the rest of the render tree.
+						</li>
+						<li>
+							CLI (<span class="mono">chronly status</span>,
+							<span class="mono">toggle-pause</span>) for status bars, Arch
+							package via PKGBUILD, released as v0.1.2-alpha.
+						</li>
+					</ul>
 					<p class="tags">Go · Wails · React · SQLite</p>
 				</div>
 			</section>
@@ -336,10 +343,8 @@
 					<dd>React, Next.js, Vue, Angular, Tailwind, SCSS, Vite</dd>
 					<dt>backend &amp; data</dt>
 					<dd>NestJS, Node.js, PostgreSQL, Prisma, Redis, MySQL, SQLite</dd>
-					<dt>desktop</dt>
-					<dd>Wails, Tauri</dd>
-					<dt>tools</dt>
-					<dd>Linux, Docker, Git, Vitest, Swagger, Postman</dd>
+					<dt>desktop &amp; tools</dt>
+					<dd>Wails, Tauri, Linux, Docker, Git, Vitest, Swagger, Postman</dd>
 				</dl>
 			</section>
 		</main>
