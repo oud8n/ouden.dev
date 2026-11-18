@@ -1,5 +1,4 @@
 import { NAV_ITEMS } from '../data/content'
-import { MoonIcon, SunIcon } from './icons'
 
 type HeaderProps = {
 	isDark: boolean
@@ -49,7 +48,7 @@ export function Header({
 						}
 						className='theme-toggle'
 					>
-						{isDark ? <MoonIcon /> : <SunIcon />}
+						{isDark ? '☾' : '☀'}
 					</button>
 
 					<button
