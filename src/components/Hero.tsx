@@ -77,6 +77,14 @@ export function Hero({
 								>
 									github
 								</a>
+								<a
+									href={`${import.meta.env.BASE_URL}cv.pdf`}
+									target='_blank'
+									rel='noopener noreferrer'
+									className='btn btn-outline magnetic'
+								>
+									cv
+								</a>
 							</div>
 						</div>
 					</div>
