@@ -10,6 +10,7 @@ export default defineConfig({
 		rollupOptions: {
 			input: {
 				main: resolve(import.meta.dirname, 'index.html'),
+				notes: resolve(import.meta.dirname, 'notes/index.html'),
 				idempotency: resolve(import.meta.dirname, 'notes/idempotency/index.html'),
 				llmPhysics: resolve(import.meta.dirname, 'notes/llm-physics/index.html'),
 			},

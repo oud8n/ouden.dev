@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en" class="dark-theme">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/jpeg" href="/w.jpg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Notes | ouden</title>
+		<meta
+			name="description"
+			content="Notes by Ouden on problems from work and own projects, with interactive diagrams." />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content="Notes | ouden" />
+		<meta
+			property="og:description"
+			content="Problems from work and own projects, written up with interactive diagrams." />
+		<meta property="og:url" content="https://skipydev.github.io/skipy.dev/notes/" />
+		<meta property="og:image" content="https://skipydev.github.io/skipy.dev/og.png" />
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:image" content="https://skipydev.github.io/skipy.dev/og.png" />
+		<script>
+			try {
+				if (localStorage.getItem('theme') === 'light')
+					document.documentElement.classList.remove('dark-theme')
+			} catch (e) {}
+		</script>
+	</head>
+	<body>
+		<div id="root"></div>
+		<script type="module" src="/src/notes/index/main.tsx"></script>
+	</body>
+</html>
