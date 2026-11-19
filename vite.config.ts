@@ -4,7 +4,7 @@ import { resolve } from 'node:path'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-	base: '/skipy.dev/',
+	base: '/ouden.dev/',
 	plugins: [react(), babel({ presets: [reactCompilerPreset()] })],
 	build: {
 		rollupOptions: {
