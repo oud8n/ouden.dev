@@ -22,12 +22,6 @@ export const NOTES_UPCOMING = [
 			'Read, check, increment: how parallel sign-in attempts slipped past the limit, and why trusting X-Forwarded-For lets an attacker pick their own IP.',
 	},
 	{
-		title: 'Credits without a mutex',
-		status: 'planned',
-		pitch:
-			'Why a Go mutex stops helping once there are two servers, and the one UPDATE … RETURNING that makes spending credits atomic.',
-	},
-	{
 		title: 'SQLITE_BUSY and a desktop app that writes from three places',
 		status: 'planned',
 		pitch:
@@ -48,6 +42,15 @@ export const NOTES_UPCOMING = [
 ]
 
 export const NOTES = [
+	{
+		slug: 'credits',
+		date: 'Nov 19, 2026',
+		readTime: '8 min',
+		title: 'Credits without a mutex: let PostgreSQL count the money',
+		summary:
+			'How physics.ai stopped double-spending credits: a read-check-write race, a mutex that only covers one process, and the single conditional UPDATE that replaced it. Plus rewards paid exactly once with FOR UPDATE and ON CONFLICT. With interactive diagrams.',
+		tags: ['PostgreSQL', 'Go', 'physics.ai'],
+	},
 	{
 		slug: 'llm-physics',
 		date: 'Nov 19, 2026',

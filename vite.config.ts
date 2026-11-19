@@ -13,6 +13,7 @@ export default defineConfig({
 				notes: resolve(import.meta.dirname, 'notes/index.html'),
 				idempotency: resolve(import.meta.dirname, 'notes/idempotency/index.html'),
 				llmPhysics: resolve(import.meta.dirname, 'notes/llm-physics/index.html'),
+				credits: resolve(import.meta.dirname, 'notes/credits/index.html'),
 			},
 		},
 	},
