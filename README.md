@@ -1,7 +1,7 @@
 # { ouden }
 
 My personal portfolio site — built with React, TypeScript, Vite and SCSS.
-Live at [skipydev.github.io/skipy.dev](https://skipydev.github.io/skipy.dev/).
+Live at [oud8n.github.io/ouden.dev](https://oud8n.github.io/ouden.dev/).
 
 ## Open source
 

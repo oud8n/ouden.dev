@@ -203,7 +203,7 @@ export const PROJECTS: Project[] = [
 	{
 		name: 'this site',
 		asciiLogo: { text: 'oud8n', accent: '8' },
-		url: 'https://github.com/skipydev/skipy.dev',
+		url: 'https://github.com/oud8n/ouden.dev',
 		desc: 'Built from scratch with no UI libraries, including the marquee, the ASCII banner and the spinning donut. Open source.',
 		tags: ['React', 'TypeScript', 'Vite'],
 	},
