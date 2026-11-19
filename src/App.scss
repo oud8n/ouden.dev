@@ -546,18 +546,6 @@ button {
 	margin: 0 4px;
 }
 
-.logo-sub {
-	margin-left: 8px;
-	font-size: 11px;
-	font-weight: 400;
-	color: rgb(var(--red-rgb) / 0.8);
-	display: none;
-
-	@media (min-width: 481px) and (max-width: 768px), (min-width: 1200px) {
-		display: inline;
-	}
-}
-
 .desktop-nav {
 	position: absolute;
 	left: 50%;
