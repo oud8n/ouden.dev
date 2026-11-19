@@ -22,7 +22,6 @@ export function Header({
 					<span className='logo-bracket'>{'{'}</span>
 					<span className='logo-text'>ouden</span>
 					<span className='logo-bracket'>{'}'}</span>
-					<span className='logo-sub'>| fullstack developer</span>
 				</a>
 
 				<nav className='desktop-nav'>
